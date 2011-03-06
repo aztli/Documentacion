@@ -1,0 +1,1501 @@
+<?xml version='1.0' encoding='utf-8'?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.1" version="1.1">
+  <file original="ncurses_capitulo2.odt" source-language="en" datatype="plaintext">
+    <body>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[0]">
+        <source>CHAPTER</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[1]">
+        <source>2</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[2]">
+        <source>Basic I/O, the NCurses Way</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[4]">
+        <source>NCurses allows you full control over terminal screen (or window) but only if</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[5]">
+        <source>you heed its rules! There is a definite way to set up an NCurses program and</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[6]">
+        <source>some specific tricks and traps to know. Also, you must use NCurses’ own I/O</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[7]">
+        <source>functions to display text as well as read input from the keyboard.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[8]">
+        <source>The Skeleton</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[9]">
+        <source>The majority of NCurses programs have the same basic skeleton, which looks</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[10]">
+        <source>something like this:</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[11]">
+        <source><g id="0"/>#include &lt;ncurses.h&gt;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[12]">
+        <source><g id="1"/>int main(void)</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[13]">
+        <source><g id="2"/>{</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[14]">
+        <source><g id="3"/>initscr(); <g id="4"/>/* Initialize ncurses */</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[15]">
+        <source><g id="5"/>/* i/o and other programming done here */</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[16]">
+        <source><g id="6"/>endwin(); <g id="7"/>/* Properly close ncurses */</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[17]">
+        <source><g id="8"/>return 0; <g id="9"/>/* cough up return value for the shell */</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[18]">
+        <source><g id="10"/>}</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[19]">
+        <source><g id="11"/>15</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[20]">
+        <source><g id="12"/>The bookends are the two functions initscr() and endwin(). Between</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[21]">
+        <source>them you can stuff all the NCurses commands and functions that your little</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[22]">
+        <source>heart desires, plus the usual hoard of C programming commands — with the</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[23]">
+        <source>exception of the standard I/O commands. No, you must use NCurses’ own</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[24]">
+        <source>I/O commands for NCurses to work. But more on that later.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[25]">
+        <source><g id="13"/>#include &lt;ncurses.h&gt;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[26]">
+        <source><g id="14"/>You must include the NCURSES.H header file so that the compiler doesn’t</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[27]">
+        <source>choke on your NCurses functions.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[28]">
+        <source><g id="15"/>N OT E Please note that including the NCURSES.H header file does not</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[29]">
+        <source><g id="16"/>automatically link in the NCurses library. No, you must do that with the</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[30]">
+        <source><g id="17"/>–lncurses switch when you compile (as covered in Chapter 1). There is a</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[31]">
+        <source><g id="18"/>difference between the header and library files!</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[32]">
+        <source><g id="19"/>The NCurses header file does a few nifty tricks. First, it automatically</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[33]">
+        <source>includes the following other header files:</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[34]">
+        <source><g id="20"/>stdio.h</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[35]">
+        <source><g id="21"/>unctrl.h</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[36]">
+        <source><g id="22"/>stdarg.h</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[37]">
+        <source><g id="23"/>stddef.h</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[38]">
+        <source><g id="24"/>Therefore, there is no need to re-include these header files in your source</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[39]">
+        <source>code. In fact, if you do, you may end up slowing things down and creating files</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[40]">
+        <source>much larger than they need to be. So if you’re tempted to do this:</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[41]">
+        <source><g id="25"/>#include &lt;stdio.h&gt;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[42]">
+        <source><g id="26"/>#include &lt;ncurses.h&gt;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[43]">
+        <source><g id="27"/>Do only this instead:</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[44]">
+        <source><g id="28"/>#include &lt;ncurses.h&gt;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[45]">
+        <source><g id="29"/>Also, the NCURSES.H file defines such things as TRUE, FALSE, OK, ERR, and</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[46]">
+        <source>other useful constants. It contains definitions for structures you’ll be using</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[47]">
+        <source>later. Plus, it includes many other wonderful and useful goodies. If you have</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[48]">
+        <source>the time, peruse the header file, which can be found at /USR/INCLUDE/</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[49]">
+        <source>NCURSES.H.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[50]">
+        <source><x id="30" xid="office:document-content[0]/office:body[0]/office:text[0]/text:p[50]/text:soft-page-break[0]"/>The initscr() Function</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[51]">
+        <source>The initscr() function initializes NCurses. It does not clear the terminal</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[52]">
+        <source>screen. Instead, it sets up internal memory structures and interfaces between</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[53]">
+        <source>the NCurses functions and your computer’s terminal I/O thingy.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[54]">
+        <source><g id="31"/>Two important items initscr() creates are called the standard screen and</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[55]">
+        <source>the current screen. Both of these are internal structures used by NCurses to effi-</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[56]">
+        <source>ciently display information on the terminal screen.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[57]">
+        <source><g id="32"/>The standard screen, or stdscr, is the default output window for NCurses,</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[58]">
+        <source>as shown in Figure 2-1. As you’ll discover later in Chapter 8, all NCurses out-</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[59]">
+        <source>put commands, and a select few input commands, are window oriented. The</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[60]">
+        <source>standard screen is the main window you’ll use, and it’s exactly the same size</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[61]">
+        <source>as the terminal screen. The initscr() function creates the standard screen</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[62]">
+        <source>and uses the variable stdscr to reference it.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[63]">
+        <source><g id="33"/>The standard screen, however, is not the same as the terminal window, and</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[64]">
+        <source>stuff you write to the standard screen doesn’t appear on the terminal window.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[65]">
+        <source>Well, not right away.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[66]">
+        <source><g id="34"/>The refresh() command is required to update text on the terminal win-</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[67]">
+        <source>dow, letting you see what NCurses has done. What refresh() does is to</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[68]">
+        <source>check for new text has been output by NCurses and update that text on the</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[69]">
+        <source>current screen, or curscr, as shown in Figure 2-2.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[70]">
+        <source><g id="35"/>The current screen is NCurses’s internal representation of what is believed</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[71]">
+        <source>to be on the terminal screen, or what the user sees, as shown in Figure 2-2. The</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[72]">
+        <source>refresh() function is responsible for updating the current screen, which</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[73]">
+        <source>then updates what is shown to the user.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[74]">
+        <source><g id="36"/>Like the standard screen, the current screen is an NCurses window. But</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[75]">
+        <source>unlike stdscr, it’s uncommon (and not recommended) to output directly to</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[76]">
+        <source>curscr. There are many reasons for this, as you’ll learn later in this book.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[77]">
+        <source><g id="37"/>In addition to the standard screen and current screen, there is something</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[78]">
+        <source>called the virtual screen. The virtual screen exists for efficiency’s sake. It con-</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[79]">
+        <source>tains updated information, only those items changed or touched in a certain</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[80]">
+        <source>window and which are waiting to be updated on the current screen.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[82]">
+        <source>How the virtual screen helps keep text output efficient</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[83]">
+        <source><g id="38"/>Internally, the refresh() function consists of two commands. The first is</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[84]">
+        <source>wnoutrefresh(), which updates only the changed portions of a window or</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[85]">
+        <source>the standard screen to the virtual screen. The second half of the refresh()</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[86]">
+        <source>function is doupdate(), which makes the current screen match the virtual</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[87]">
+        <source>screen’s updates. Again, this is done to keep text output efficient. The other</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[88]">
+        <source>way would be to update the complete terminal screen each time new text is</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[89]">
+        <source>output, which can be maddeningly slow on some terminals.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[90]">
+        <source><g id="39"/>All this terminology (standard screen, current screen, virtual screen,</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[91]">
+        <source>wnoutrefresh() and doupdate()) can be overwhelming. Don’t let it get to</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[92]">
+        <source>you now. It’s merely the internal mechanisms by which NCurses works. As</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[93]">
+        <source>another example, consider the source code for GOODBYE.C as shown in</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[94]">
+        <source>Chapter 1:</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[95]">
+        <source><g id="40"/>1 <g id="41"/>#include <g id="42"/>&lt;ncurses.h&gt;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[96]">
+        <source><g id="43"/>2</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[97]">
+        <source><g id="44"/>3 <g id="45"/>int main(void)</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[98]">
+        <source><g id="46"/>4 <g id="47"/>{</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[99]">
+        <source><g id="48"/>5 <g id="49"/>initscr();</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[100]">
+        <source><g id="50"/>6 <g id="51"/>addstr(“Goodbye, cruel C programming!”);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[101]">
+        <source><g id="52"/>7 <g id="53"/>refresh();</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[102]">
+        <source><x id="54" xid="office:document-content[0]/office:body[0]/office:text[0]/text:p[102]/text:soft-page-break[0]"/><g id="55"/>8 <g id="56"/>getch();</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[103]">
+        <source><g id="57"/>9</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[104]">
+        <source><g id="58"/>10 <g id="59"/>endwin();</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[105]">
+        <source><g id="60"/>11 <g id="61"/>return 0;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[106]">
+        <source><g id="62"/>12 <g id="63"/>}</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[107]">
+        <source><g id="64"/>In line 5, the initscr() function configures NCurses and creates both the</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[108]">
+        <source>stdscr and curscr.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[109]">
+        <source><g id="65"/>Text is written to the stdscr using the addstr() function in line 6.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[110]">
+        <source><g id="66"/>The refresh() command in line 7 updates both the virtual screen, which</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[111]">
+        <source>immediately updates the current screen and, in the end, the terminal window</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[112]">
+        <source>so that you can see the text.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[113]">
+        <source><g id="67"/>In line 8, everything pauses with getch(), waiting for the user to press</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[114]">
+        <source>Enter.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[115]">
+        <source><g id="68"/>The endwin() function shuts NCurses down in line 10, but endwin()</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[116]">
+        <source>deserves its own section and explanation.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[117]">
+        <source>The initscr() Function’s Exceptions</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[118]">
+        <source>For starting out, it’s easy to remember that initscr() is the function that ini-</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[119]">
+        <source>tializes NCurses for your code. But initscr() isn’t alone; it has a twin func-</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[120]">
+        <source>tion called newterm().</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[121]">
+        <source><g id="69"/>The newterm() function sets up NCurses just as initscr() does, but it</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[122]">
+        <source>allows you more control over the input and output sources. Therefore, it’s kind</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[123]">
+        <source>of an advanced function, and, if you’re curious, you can look it up in Appen-</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[124]">
+        <source>dix A. Otherwise, it does not appear in the tutorial portion of this book.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[125]">
+        <source><g id="70"/>Also, initscr() isn’t necessarily the very first NCurses function you’ll</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[126]">
+        <source>use in your code. There are several functions in NCurses that must be used</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[127]">
+        <source>before initscr(). These functions are mentioned under the definition of</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[128]">
+        <source>inistscr() in Appendix A, and more information on each function can be</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[129]">
+        <source>found in that appendix as well.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[130]">
+        <source>The endwin() Function</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[131]">
+        <source>The cleanup hitter in the NCurses line up is the endwin() function. It undoes</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[132]">
+        <source>any modifications that NCurses has made to your terminal, and does other</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[133]">
+        <source>tidying up.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[134]">
+        <source><g id="71"/>It’s very important that you finish your NCurses program with this command!</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[135]">
+        <source><g id="72"/>If you neglect to use endwin(), your terminal’s behavior becomes unpre-</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[136]">
+        <source>dictable. (This is the voice of experience here.) So be very, very sure that you</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[137]">
+        <source>use endwin() when your program is done — especially if you’re program-</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[138]">
+        <source>ming some large, monster program with several exit holes.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[139]">
+        <source><g id="73"/>Note that the standard C output functions — putc(), puts(), printf(),</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[140]">
+        <source>and so on — do output text when NCurses is active, though by doing so</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[141]">
+        <source>NCurses would be confused about what’s on the display. Therefore, it’s better</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[142]">
+        <source>not to use such output functions while NCurses is actively outputting text.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[143]">
+        <source><g id="74"/>Incidentally, endwin() need not be the end of your NCurses program. It’s</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[144]">
+        <source>possible to use endwin() to merely suspend NCurses and return to the ter-</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[145]">
+        <source>minal. When the refresh() function is used after endwin(), it reactivates</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[146]">
+        <source>NCurses visual mode, though you must still use another endwin() function</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[147]">
+        <source>to properly end your program. The entry for endwin() in Appendix A</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[148]">
+        <source>explains more about this feature.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[149]">
+        <source>The refresh() Function</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[150]">
+        <source>Rare is the NCurses program without a refresh() function. It’s almost</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[151]">
+        <source>required. refresh() updates the screen, noting any changes between what</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[152]">
+        <source>you want on the screen and what’s there and writing the difference.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[153]">
+        <source><g id="75"/>Use the following code in Listing 2-1 to create the cls program.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[154]">
+        <source><x id="76" xid="office:document-content[0]/office:body[0]/office:text[0]/text:p[154]/text:soft-page-break[0]"/>Listing 2-1: cls.c</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[155]">
+        <source><g id="77"/>1 <g id="78"/>#include <g id="79"/>&lt;ncurses.h&gt;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[156]">
+        <source><g id="80"/>2</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[157]">
+        <source><g id="81"/>3 <g id="82"/>int main(void)</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[158]">
+        <source><g id="83"/>4 <g id="84"/>{</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[159]">
+        <source><g id="85"/>5 <g id="86"/>initscr();</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[160]">
+        <source><g id="87"/>6 <g id="88"/>refresh();</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[161]">
+        <source><g id="89"/>7</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[162]">
+        <source><g id="90"/>8 <g id="91"/>endwin();</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[163]">
+        <source><g id="92"/>9 <g id="93"/>return 0;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[164]">
+        <source><g id="94"/>10 <g id="95"/>}</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[165]">
+        <source><g id="96"/>Yes, indeed, the program clears the screen. Here’s how. When initscr()</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[166]">
+        <source>runs, it initializes stdscr, the default window, to all blanks and it sets the cur-</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[167]">
+        <source>sor to the home position, top row, left-most column. The refresh() function</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[168]">
+        <source>updates stdscr to the current screen and the terminal display, which has the</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[169]">
+        <source>effect of clearing the screen and homing the cursor.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[170]">
+        <source>Writing Text</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[171]">
+        <source>Here are three popular NCurses text output functions:</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[172]">
+        <source><g id="97"/>addch(ch);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[173]">
+        <source><g id="98"/>addstr(*str);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[174]">
+        <source><g id="99"/>printw(format,var[,var...]);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[175]">
+        <source><g id="100"/>The addch() function places (or adds) a single character to the display.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[176]">
+        <source><g id="101"/>addstr() adds an entire string, essentially calling addch() over and over</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[177]">
+        <source>until the entire string is coughed up. You’ve already seen addstr() in use</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[178]">
+        <source>with the goodbye.c program in Chapter 1. It’s similar to the puts() func-</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[179]">
+        <source>tion in C, though a newline (\n) isn’t automatically appended to the string.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[180]">
+        <source><g id="102"/>printw() is the NCurses version of the printf() function. It outputs a</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[181]">
+        <source>formatted string to the display.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[182]">
+        <source><g id="103"/>NCurses sports more text output functions, but for getting started these</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[183]">
+        <source>three basic functions are fine.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[184]">
+        <source>Tossing Up Text One Stupid Character at a Time</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[185]">
+        <source>I love marquee programs. But rather than write a really fancy one, I’ll just</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[186]">
+        <source>show you how addch() can blurt out one character at a time as the following</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[187]">
+        <source>program in Listing 2-2 demonstrates.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[188]">
+        <source>Listing 2-2: ADD1.C</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[189]">
+        <source><g id="104"/>1 <g id="105"/>#include <g id="106"/>&lt;ncurses.h&gt;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[190]">
+        <source><g id="107"/>2</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[191]">
+        <source><g id="108"/>3 <g id="109"/>int main(void)</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[192]">
+        <source><g id="110"/>4 <g id="111"/>{</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[193]">
+        <source><g id="112"/>5 <g id="113"/>char text[] = “Greetings from NCurses!”;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[194]">
+        <source><g id="114"/>6 <g id="115"/>char *t;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[195]">
+        <source><g id="116"/>7</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[196]">
+        <source><g id="117"/>8 <g id="118"/>initscr(); <g id="119"/>/* initialize NCurses */</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[197]">
+        <source><g id="120"/>9 <g id="121"/>t = text; <g id="122"/>/* initialize the pointer */</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[198]">
+        <source><g id="123"/>10</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[199]">
+        <source><g id="124"/>11 <g id="125"/>while(*t) <g id="126"/>/* loop through the whole string */</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[200]">
+        <source><g id="127"/>12 <g id="128"/>{</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[201]">
+        <source><g id="129"/>13 <g id="130"/>addch(*t); <g id="131"/>/* put one char to curscr */</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[202]">
+        <source><g id="132"/>14 <g id="133"/>t++; <g id="134"/>/* increment the pointer */</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[203]">
+        <source><g id="135"/>15 <g id="136"/>refresh(); <g id="137"/>/* update the screen */</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[204]">
+        <source><g id="138"/>16 <g id="139"/>napms(100); <g id="140"/>/* delay a bit to see the display */</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[205]">
+        <source><g id="141"/>17 <g id="142"/>} <g id="143"/>/* end while */</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[206]">
+        <source><x id="144" xid="office:document-content[0]/office:body[0]/office:text[0]/text:p[206]/text:soft-page-break[0]"/><g id="145"/>18 <g id="146"/>getch(); <g id="147"/>/* wait here */</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[207]">
+        <source><g id="148"/>19</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[208]">
+        <source><g id="149"/>20 <g id="150"/>endwin(); <g id="151"/>/* clean up NCurses */</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[209]">
+        <source><g id="152"/>21 <g id="153"/>return 0; <g id="154"/>/* keep the shell happy */</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[210]">
+        <source><g id="155"/>22 <g id="156"/>}</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[211]">
+        <source><g id="157"/>This program inches through a string of text using a pointer t. The pointer</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[212]">
+        <source>allows each character in the string to be displayed one at a time via the</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[213]">
+        <source>addch() function.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[214]">
+        <source><g id="158"/>The napms() function pauses output one-tenth of a second between each</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[215]">
+        <source>character displayed, which helps to drive home the nature of addch(). I’ll</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[216]">
+        <source>cover napms() in more detail in the next section.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[217]">
+        <source><g id="159"/>N OT E Note the importance of refresh()! You cannot see what’s on the</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[218]">
+        <source><g id="160"/>screen until you refresh!</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[219]">
+        <source>Pausing for a Side-trip</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[220]">
+        <source>In addition to all the fun screen (and soon-to-come keyboard) frivolity,</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[221]">
+        <source>NCurses also features a variable pausing function, napms(). Such a cute</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[222]">
+        <source>name!</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[223]">
+        <source><g id="161"/>napms(ms)</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[224]">
+        <source><g id="162"/>The napms() function pauses program execution for ms milliseconds. So</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[225]">
+        <source>the statement:</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[226]">
+        <source><g id="163"/>napms(1000);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[227]">
+        <source><g id="164"/>causes program execution to pause for one whole second. The statement:</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[228]">
+        <source><g id="165"/>napms(100);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[229]">
+        <source><g id="166"/>used in the code for ADD1.C pauses execution for only a paltry 1/10th</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[230]">
+        <source>second.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[231]">
+        <source><g id="167"/>Change the value of napms() in line 16 of the ADD1.C code in Listing 2-3 to</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[232]">
+        <source>see how it affects the program’s output.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[233]">
+        <source>Blurping Text</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[234]">
+        <source>There’s no point in using addch() to display an entire line of text. That’s</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[235]">
+        <source>because there’s also the addstr() function, which takes care of the tedious</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[236]">
+        <source>task for you.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[237]">
+        <source>Listing 2-3: ADD2.C</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[238]">
+        <source><g id="168"/>1 <g id="169"/>#include <g id="170"/>&lt;ncurses.h&gt;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[239]">
+        <source><g id="171"/>2</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[240]">
+        <source><g id="172"/>3 <g id="173"/>int main(void)</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[241]">
+        <source><g id="174"/>4 <g id="175"/>{</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[242]">
+        <source><g id="176"/>5 <g id="177"/>char text1[] = “Oh give me a clone!\n”;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[243]">
+        <source><g id="178"/>6 <g id="179"/>char text2[] = “Yes a clone of my own!”;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[244]">
+        <source><g id="180"/>7</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[245]">
+        <source><g id="181"/>8 <g id="182"/>initscr();</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[246]">
+        <source><g id="183"/>9 <g id="184"/>addstr(text1); <g id="185"/>/* add the first string */</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[247]">
+        <source><g id="186"/>10 <g id="187"/>addstr(text2); <g id="188"/>/* add the second string */</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[248]">
+        <source><g id="189"/>11 <g id="190"/>refresh(); <g id="191"/>/* display the result */</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[249]">
+        <source><g id="192"/>12 <g id="193"/>getch(); <g id="194"/>/* wait */</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[250]">
+        <source><g id="195"/>13</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[251]">
+        <source><g id="196"/>14 <g id="197"/>endwin();</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[252]">
+        <source><g id="198"/>15 <g id="199"/>return 0;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[253]">
+        <source><g id="200"/>16 <g id="201"/>}</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[254]">
+        <source><g id="202"/>Note the comments in Listing 2-3: The string is added with the addstr()</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[255]">
+        <source>function, not displayed. The string gets displayed only when refresh()</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[256]">
+        <source>updates the current screen.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[257]">
+        <source><g id="203"/>Another thing to note: The \n at the end of the first string did, indeed, move</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[258]">
+        <source><x id="204" xid="office:document-content[0]/office:body[0]/office:text[0]/text:p[258]/text:soft-page-break[0]"/>the cursor down to the next line.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[259]">
+        <source><g id="205"/>This next program example in Listing 2-4 contains a subtle variation on the</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[260]">
+        <source>ADD2.C code.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[261]">
+        <source>Listing 2-4: ADD3.C</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[262]">
+        <source><g id="206"/>1 <g id="207"/>#include <g id="208"/>&lt;ncurses.h&gt;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[263]">
+        <source><g id="209"/>2</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[264]">
+        <source><g id="210"/>3 <g id="211"/>int main(void)</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[265]">
+        <source><g id="212"/>4 <g id="213"/>{</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[266]">
+        <source><g id="214"/>5 <g id="215"/>char text1[] = “Oh give me a clone!\n”;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[267]">
+        <source><g id="216"/>6 <g id="217"/>char text2[] = “Yes a clone of my own!”;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[268]">
+        <source><g id="218"/>7</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[269]">
+        <source><g id="219"/>8 <g id="220"/>initscr();</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[270]">
+        <source><g id="221"/>9 <g id="222"/>addstr(text1); <g id="223"/>/* add the first string */</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[271]">
+        <source><g id="224"/>10 <g id="225"/>addstr(text2); <g id="226"/>/* add the second string */</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[272]">
+        <source><g id="227"/>11 <g id="228"/>move(2,0); <g id="229"/>/* cursor to row 3, column 1 */</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[273]">
+        <source><g id="230"/>12 <g id="231"/>addstr(“With the Y chromosome changed to the X.”);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[274]">
+        <source><g id="232"/>13 <g id="233"/>refresh(); <g id="234"/>/* display the result */</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[275]">
+        <source><g id="235"/>14 <g id="236"/>getch();</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[276]">
+        <source><g id="237"/>15</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[277]">
+        <source><g id="238"/>16 <g id="239"/>endwin();</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[278]">
+        <source><g id="240"/>17 <g id="241"/>return 0;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[279]">
+        <source><g id="242"/>18 <g id="243"/>}</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[280]">
+        <source><g id="244"/>I added the move() function in line 11, which changes the cursor’s location</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[281]">
+        <source>on the standard screen window. I also added another addstr() function at</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[282]">
+        <source>line 12 to write the next line of text.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[283]">
+        <source>The move() Function</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[284]">
+        <source>There are many cursors in NCurses. For example, each window has its own</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[285]">
+        <source>cursor and that cursor location stays the same in each window regardless of</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[286]">
+        <source>what happens to the cursor in other windows.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[287]">
+        <source><g id="245"/>In the code for ADD3.C shown in Listing 2-4, the newline displayed by</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[288]">
+        <source>addstr() in line 9 moves the cursor on the standard screen window from the</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[289]">
+        <source>end of the current line of text, down to the start of the next line — as you</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[290]">
+        <source>would expect.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[291]">
+        <source><g id="246"/>In line 11 of ADD3.C, the move() function moves the cursor’s location. Here</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[292]">
+        <source>is the format of the move() function:</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[293]">
+        <source><g id="247"/>move(y,x)</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[294]">
+        <source><g id="248"/>y is a row value, going up and down the screen.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[295]">
+        <source><g id="249"/>x is a column value, going left to right across the screen.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[296]">
+        <source><g id="250"/>The upper-left corner of the screen is coordinate 0,0. And, of course, the total</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[297]">
+        <source>number of rows and columns depends on your terminal configuration, though</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[298]">
+        <source>there is a way to discover it, as I’ll show you in Chapter 4. Figure 2-4 also helps</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[299]">
+        <source>illustrate how the coordinates work out.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[300]">
+        <source><g id="251"/>N OT E It’s important to remember that the move() function puts the row</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[301]">
+        <source><g id="252"/>first, or Y, X (if you’re used to Cartesian coordinates). Think row, column as</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[302]">
+        <source><g id="253"/>opposed to X, Y.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[303]">
+        <source>The Old Formatted Text Trick</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[304]">
+        <source>In NCurses, the printw() function can be used just like printf() to display</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[305]">
+        <source>strings of text, variables, formatted text, and all that sort of junk. If you know</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[306]">
+        <source>printf(),you also know printw() — but remember that in NCurses the</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[307]">
+        <source>printw() function is the one you want to use. Check out Listing 2-5 to see</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[308]">
+        <source>how this works.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[310]">
+        <source><x id="254" xid="office:document-content[0]/office:body[0]/office:text[0]/text:p[310]/text:soft-page-break[0]"/>Figure 2-4: Plotting window coordinates in NCurses</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[311]">
+        <source>Listing 2-5: YODA.C</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[312]">
+        <source><g id="255"/>1 <g id="256"/>#include <g id="257"/>&lt;ncurses.h&gt;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[313]">
+        <source><g id="258"/>2</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[314]">
+        <source><g id="259"/>3 <g id="260"/>int main(void)</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[315]">
+        <source><g id="261"/>4 <g id="262"/>{</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[316]">
+        <source><g id="263"/>5 <g id="264"/>int yoda = 874;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[317]">
+        <source><g id="265"/>6 <g id="266"/>int ss = 65;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[318]">
+        <source><g id="267"/>7</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[319]">
+        <source><g id="268"/>8 <g id="269"/>initscr();</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[320]">
+        <source><g id="270"/>9 <g id="271"/>printw(“Yoda is %d years old\n”,yoda);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[321]">
+        <source><g id="272"/>10 <g id="273"/>printw(“He has collected %d years\n”,yoda-ss);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[322]">
+        <source><g id="274"/>11 <g id="275"/>printw(“of Social Security.”);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[323]">
+        <source><g id="276"/>12 <g id="277"/>refresh();</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[324]">
+        <source><g id="278"/>13 <g id="279"/>getch();</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[325]">
+        <source><g id="280"/>14</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[326]">
+        <source><g id="281"/>15 <g id="282"/>endwin();</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[327]">
+        <source><g id="283"/>16 <g id="284"/>return 0;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[328]">
+        <source><g id="285"/>17 <g id="286"/>}</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[329]">
+        <source><g id="287"/>Nothing truly new here. The printw() function works just as you would</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[330]">
+        <source>expect printf() to work.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[331]">
+        <source>Reading Text</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[332]">
+        <source>There is nothing really magical about writing text to the screen. Well, the</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[333]">
+        <source>move() function is pretty cool. But the really cool stuff — especially if you’re</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[334]">
+        <source>weary of a lack of single-character input functions in C — comes with reading</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[335]">
+        <source>text in from the keyboard.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[336]">
+        <source><g id="288"/>Here are some NCurses console input functions:</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[337]">
+        <source><g id="289"/>getch()</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[338]">
+        <source><g id="290"/>getstr(*str)</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[339]">
+        <source><g id="291"/>getnstr(*str,length)</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[340]">
+        <source><g id="292"/>scanw(format,var[,var...])</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[341]">
+        <source><g id="293"/>The getch() function returns a single character from the console. There is</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[342]">
+        <source>no need to press the Enter key, because the character is read right away.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[343]">
+        <source><g id="294"/>The getstr() and getnstr() functions read in a string of text from the</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[344]">
+        <source>console. Of the two, use getnstr(), which measures input and is therefore</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[345]">
+        <source>more secure than the straight getstr() function.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[346]">
+        <source><g id="295"/>Finally, scanw() works just like the standard I/O function scanf(). It</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[347]">
+        <source>allows formatted input.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[348]">
+        <source><g id="296"/>There are other NCurses functions for console input. Some help you shape</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[349]">
+        <source>input, which I’ll get into later in this book. For now I’m just going to demon-</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[350]">
+        <source>strate the basic commands listed here.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[351]">
+        <source>The Silly Typewriter Program</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[352]">
+        <source>Nothing best demonstrates “one character in/one character out” than a sim-</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[353]">
+        <source>ple, stupid typewriter program, such as the one in Listing 2-6.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[354]">
+        <source>Listing 2-6: TYPEWRITER.C</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[355]">
+        <source><g id="297"/>1 <g id="298"/>#include <g id="299"/>&lt;ncurses.h&gt;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[356]">
+        <source><g id="300"/>2</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[357]">
+        <source><g id="301"/>3 <g id="302"/>int main(void)</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[358]">
+        <source><g id="303"/>4 <g id="304"/>{</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[359]">
+        <source><g id="305"/>5 <g id="306"/>char ch;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[360]">
+        <source><g id="307"/>6</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[361]">
+        <source><g id="308"/>7 <g id="309"/>initscr();</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[362]">
+        <source><x id="310" xid="office:document-content[0]/office:body[0]/office:text[0]/text:p[362]/text:soft-page-break[0]"/><g id="311"/>8 <g id="312"/>addstr(“Type a few lines of text\n”);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[363]">
+        <source><g id="313"/>9 <g id="314"/>addstr(“Press ~ to quit\n”);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[364]">
+        <source><g id="315"/>10 <g id="316"/>refresh();</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[365]">
+        <source><g id="317"/>11</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[366]">
+        <source><g id="318"/>12 <g id="319"/>while( (ch = getch()) != ‘~’);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[367]">
+        <source><g id="320"/>13</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[368]">
+        <source><g id="321"/>14</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[369]">
+        <source><g id="322"/>15 <g id="323"/>endwin();</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[370]">
+        <source><g id="324"/>16 <g id="325"/>return 0;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[371]">
+        <source><g id="326"/>17 <g id="327"/>}</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[372]">
+        <source><g id="328"/>Note the while loop here. Basically, it’s saying to read all character input</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[373]">
+        <source>until the ~ character is received; then bail. Try the program out:</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[374]">
+        <source><g id="329"/>Type a few lines of text</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[375]">
+        <source><g id="330"/>Press ~ to quit</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[376]">
+        <source><g id="331"/>Pressing Enter may result in a return instead of a return/line feed combina-</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[377]">
+        <source>tion. That’s fine; the program is more about I/O than actually editing text.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[378]">
+        <source><g id="332"/>Note, however, that getch() in its natural state does display the text you’ve</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[379]">
+        <source>input; there is no need to use refresh() when getch() is reading text.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[380]">
+        <source><g id="333"/>The getch() function doesn’t always display text as it’s typed. It’s possible</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[381]">
+        <source>in NCurses to turn off echo on input. I’ll cover that in Chapter 7.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[382]">
+        <source>Consuming a String Whole</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[383]">
+        <source>The getstr() function works similarly to the standard gets() function,</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[384]">
+        <source>which simply takes keyboard input and stuffs it into a buffer — and without</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[385]">
+        <source>bounds checking, I might add. I demonstrate the function in Listing 2-7, but</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[386]">
+        <source>for security reasons, in your real programs, please use the getnstr() func-</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[387]">
+        <source>tion instead, which is shown in the next section.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[388]">
+        <source>Listing 2-7: STRING1.C</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[389]">
+        <source><g id="334"/>1 <g id="335"/>#include <g id="336"/>&lt;ncurses.h&gt;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[390]">
+        <source><g id="337"/>2</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[391]">
+        <source><g id="338"/>3 <g id="339"/>int main(void)</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[392]">
+        <source><g id="340"/>4 <g id="341"/>{</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[393]">
+        <source><g id="342"/>5 <g id="343"/>char first[24];</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[394]">
+        <source><g id="344"/>6 <g id="345"/>char last[32];</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[395]">
+        <source><g id="346"/>7</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[396]">
+        <source><g id="347"/>8 <g id="348"/>initscr();</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[397]">
+        <source><g id="349"/>9 <g id="350"/>addstr(“What is your first name? “);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[398]">
+        <source><g id="351"/>10 <g id="352"/>refresh();</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[399]">
+        <source><g id="353"/>11 <g id="354"/>getstr(first);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[400]">
+        <source><g id="355"/>12</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[401]">
+        <source><g id="356"/>13 <g id="357"/>addstr(“What is your last name? “);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[402]">
+        <source><g id="358"/>14 <g id="359"/>refresh();</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[403]">
+        <source><g id="360"/>15 <g id="361"/>getstr(last);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[404]">
+        <source><g id="362"/>16</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[405]">
+        <source><g id="363"/>17 <g id="364"/>printw(“Pleased to meet you, %s %s!”,first,last);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[406]">
+        <source><g id="365"/>18 <g id="366"/>refresh();</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[407]">
+        <source><g id="367"/>19 <g id="368"/>getch();</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[408]">
+        <source><g id="369"/>20</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[409]">
+        <source><g id="370"/>21 <g id="371"/>endwin();</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[410]">
+        <source><g id="372"/>22 <g id="373"/>return 0;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[411]">
+        <source><g id="374"/>23 <g id="375"/>}</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[412]">
+        <source><g id="376"/>In this program, only 24 characters are allocated for first name storage, then</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[413]">
+        <source>32 for last name. Please be sane about this and try not to type any super-long</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[414]">
+        <source><x id="377" xid="office:document-content[0]/office:body[0]/office:text[0]/text:p[414]/text:soft-page-break[0]"/>names!</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[415]">
+        <source><g id="378"/>Also note the positioning of the refresh() functions. Like getch(), get-</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[416]">
+        <source>str() normally displays its input as you type, so there’s no need to</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[417]">
+        <source>refresh() after or during the function.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[418]">
+        <source><g id="379"/>What is your first name? Clark</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[419]">
+        <source><g id="380"/>What is your last name? Kent</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[420]">
+        <source><g id="381"/>Pleased to meet you, Clark Kent!</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[421]">
+        <source><g id="382"/>And it pretty much works as you would expect it to.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[422]">
+        <source>Swallowing Only So Much of a String</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[423]">
+        <source>Rather than risk some idiot typing 3,000 characters of text for his first name</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[424]">
+        <source>(the latter part of which is a worm program designed to hijack your computer),</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[425]">
+        <source>use the getnstr() function instead of getstr(). That n in there means</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[426]">
+        <source>“accept only n characters of input,” a wise and logical addition to the input</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[427]">
+        <source>command.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[428]">
+        <source><g id="383"/>Listing 2-8 shows a subtle modification of the previous string1.c</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[429]">
+        <source>program.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[430]">
+        <source>Listing 2-8: STRING2.C</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[431]">
+        <source><g id="384"/>1 <g id="385"/>#include <g id="386"/>&lt;ncurses.h&gt;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[432]">
+        <source><g id="387"/>2</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[433]">
+        <source><g id="388"/>3 <g id="389"/>int main(void)</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[434]">
+        <source><g id="390"/>4 <g id="391"/>{</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[435]">
+        <source><g id="392"/>5 <g id="393"/>char first[4];</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[436]">
+        <source><g id="394"/>6 <g id="395"/>char last[4];</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[437]">
+        <source><g id="396"/>7</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[438]">
+        <source><g id="397"/>8 <g id="398"/>initscr();</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[439]">
+        <source><g id="399"/>9 <g id="400"/>addstr(“Enter the first 3 letters of your first name? “);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[440]">
+        <source><g id="401"/>10 <g id="402"/>refresh();</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[441]">
+        <source><g id="403"/>11 <g id="404"/>getnstr(first,3);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[442]">
+        <source><g id="405"/>12</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[443]">
+        <source><g id="406"/>13 <g id="407"/>addstr(“Enter the first 3 letters of your last name? “);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[444]">
+        <source><g id="408"/>14 <g id="409"/>refresh();</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[445]">
+        <source><g id="410"/>15 <g id="411"/>getnstr(last,3);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[446]">
+        <source><g id="412"/>16</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[447]">
+        <source><g id="413"/>17 <g id="414"/>addstr(“Your secret agent name is “);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[448]">
+        <source><g id="415"/>18 <g id="416"/>printw(“%s%s”,first,last);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[449]">
+        <source><g id="417"/>19 <g id="418"/>addch(‘!’);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[450]">
+        <source><g id="419"/>20 <g id="420"/>refresh();</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[451]">
+        <source><g id="421"/>21 <g id="422"/>getch();</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[452]">
+        <source><g id="423"/>22</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[453]">
+        <source><g id="424"/>23 <g id="425"/>endwin();</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[454]">
+        <source><g id="426"/>24 <g id="427"/>return 0;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[455]">
+        <source><g id="428"/>25 <g id="429"/>}</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[456]">
+        <source><g id="430"/>The size of the input buffers, first and last, is set to 4 characters. That’s</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[457]">
+        <source>3 letters plus the null \0 at the end of the string.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[458]">
+        <source><g id="431"/>Note the format for getnstr(): First comes the character buffer, then the</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[459]">
+        <source>maximum character count. Users can still backspace and erase after reaching</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[460]">
+        <source>that number of characters, but if they try to type any more, the computer beeps</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[461]">
+        <source>at them (or the screen flashes).</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[462]">
+        <source><g id="432"/>The printw() function displays the two short strings.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[463]">
+        <source><g id="433"/>Finally addch() is used to display the exclamation point.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[464]">
+        <source>The Obligatory scanw() Program</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[465]">
+        <source>I’m not a big scanf() fan (as you already know if you’ve read my C pro-</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[466]">
+        <source><x id="434" xid="office:document-content[0]/office:body[0]/office:text[0]/text:p[466]/text:soft-page-break[0]"/>gramming books); therefore you’re not going to be seeing much of scanw()</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[467]">
+        <source>outside of this section. Given that, Listing 2-9 shows the obligatory demon-</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[468]">
+        <source>stration of scanw().</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[469]">
+        <source>Listing 2-9: SUSHI.C</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[470]">
+        <source><g id="435"/>1 <g id="436"/>#include &lt;ncurses.h&gt;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[471]">
+        <source><g id="437"/>2</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[472]">
+        <source><g id="438"/>3 <g id="439"/>#define UNI 4.5</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[473]">
+        <source><g id="440"/>4</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[474]">
+        <source><g id="441"/>5 <g id="442"/>int main(void)</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[475]">
+        <source><g id="443"/>6 <g id="444"/>{</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[476]">
+        <source><g id="445"/>7 <g id="446"/>int pieces;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[477]">
+        <source><g id="447"/>8</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[478]">
+        <source><g id="448"/>9 <g id="449"/>initscr();</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[479]">
+        <source><g id="450"/>10</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[480]">
+        <source><g id="451"/>11 <g id="452"/>addstr(“SUSHI BAR”);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[481]">
+        <source><g id="453"/>12 <g id="454"/>move(3,0);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[482]">
+        <source><g id="455"/>13 <g id="456"/>printw(“We have Uni today for $%.2f.\n”,UNI);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[483]">
+        <source><g id="457"/>14 <g id="458"/>addstr(“How many pieces would you like? “);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[484]">
+        <source><g id="459"/>15 <g id="460"/>refresh();</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[485]">
+        <source><g id="461"/>16</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[486]">
+        <source><g id="462"/>17 <g id="463"/>scanw(“%d”,&amp;pieces);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[487]">
+        <source><g id="464"/>18 <g id="465"/>printw(“You want %d pieces?\n”,pieces);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[488]">
+        <source><g id="466"/>19 <g id="467"/>printw(“That will be $%.2f!”,UNI*(float)pieces);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[489]">
+        <source><g id="468"/>20 <g id="469"/>refresh();</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[490]">
+        <source><g id="470"/>21 <g id="471"/>getch();</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[491]">
+        <source><g id="472"/>22</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[492]">
+        <source><g id="473"/>23 <g id="474"/>endwin();</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[493]">
+        <source><g id="475"/>24 <g id="476"/>return 0;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[494]">
+        <source><g id="477"/>25 <g id="478"/>}</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[495]">
+        <source><g id="479"/>Again, this could just be a simple scanf() program, though scanw() is</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[496]">
+        <source>used instead. I’ve not much more to say about it, mostly because, as I’ve</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[497]">
+        <source>already mentioned, I’m not a big scanf() fan.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[498]">
+        <source><g id="480"/>T I P The big flub everyone makes with scanf()/scanw() is forgetting the</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[499]">
+        <source><g id="481"/>ampersand before nonarray variable names. That one will cost you a core dump</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[500]">
+        <source><g id="482"/>or three if you don’t catch it.</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,1525 @@
+<?xml version='1.0' encoding='utf-8'?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.1" version="1.1">
+  <file original="ncurses_capitulo3.odt" source-language="en" datatype="plaintext">
+    <body>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[0]">
+        <source>CHAPTER</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[1]">
+        <source>3</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[2]">
+        <source>Formatting Text</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[4]">
+        <source>NCurses not only puts text up on the screen; it also lets you put text on the</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[5]">
+        <source>screen with style. While the style may not be as elaborate as the styles offered</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[6]">
+        <source>in a GUI word processor, it is enough to add emphasis, fun, and perhaps a wee</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[7]">
+        <source>bit o’ color to what would otherwise be boring terminal text.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[8]">
+        <source>Text Abuse with Text Attributes</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[9]">
+        <source>There are three useful functions that control the tone of the text displayed on</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[10]">
+        <source>the screen:</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[11]">
+        <source><g id="0"/>attrset(attr)</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[12]">
+        <source><g id="1"/>attron(attr)</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[13]">
+        <source><g id="2"/>attroff(attr)</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[14]">
+        <source><g id="3"/>The attrset() function sets text attributes. It directs NCurses to apply the</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[15]">
+        <source>attribute(s) specified to all text displayed from that point onward.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[16]">
+        <source><g id="4"/>The attron() and attroff() functions turn specific text attributes on or</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[17]">
+        <source>off, respectively.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[18]">
+        <source><g id="5"/>There is some confusion regarding whether to use attrset() or</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[19]">
+        <source>attron() to apply text attributes. You can use either one. For example:</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[20]">
+        <source><g id="6"/>attrset(A_BOLD);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[21]">
+        <source><g id="7"/>31</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[22]">
+        <source><g id="8"/>attron(A_BOLD);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[23]">
+        <source><g id="9"/>Both these statements apply the bold text attribute to any text displayed</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[24]">
+        <source>afterward. The difference is that attrset() turns off all other attributes pre-</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[25]">
+        <source>viously applied, leaving only bold applied to the text, while attron() adds</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[26]">
+        <source>the bold attribute to any attributes already applied to the text.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[27]">
+        <source>More than Boring Black and White (but Not Much)</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[28]">
+        <source>When you start up NCurses, the text output is displayed using the normal</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[29]">
+        <source>(A_NORMAL) text attribute. That equates to the standard white text on a black</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[30]">
+        <source>background or however you have your terminal configured (for example,</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[31]">
+        <source>green text on a white background or whatever).</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[32]">
+        <source><g id="10"/>But that’s so boring!</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[33]">
+        <source><g id="11"/>Table 3-1 lists the basic (noncolor) text attributes you can apply to text using</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[34]">
+        <source>the attrset() or attron() functions.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[35]">
+        <source>Table 3-1: NCurses Text Attributes</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[36]">
+        <source><g id="12"/>ATTRIBUTE NAME <g id="13"/>WHAT IT DOES</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[37]">
+        <source><g id="14"/>A_ALTCHARSET <g id="15"/>Displays text using an alternative character set</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[38]">
+        <source><g id="16"/>(defined by your terminal)</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[39]">
+        <source><g id="17"/>A_BLINK <g id="18"/>Annoying blinking text</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[40]">
+        <source><g id="19"/>A_BOLD <g id="20"/>Bright text, bold text, thick text (depending on</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[41]">
+        <source><g id="21"/>terminal type)</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[42]">
+        <source><g id="22"/>A_DIM <g id="23"/>Dimmed text (not as bright as regular text)</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[43]">
+        <source><g id="24"/>A_INVIS <g id="25"/>“Hidden text” (available only on certain terminals)</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[44]">
+        <source><g id="26"/>A_NORMAL <g id="27"/>Normal text</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[45]">
+        <source><g id="28"/>A_REVERSE <g id="29"/>Inverse text</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[46]">
+        <source><g id="30"/>A_STANDOUT <g id="31"/>Same as standout()</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[47]">
+        <source><g id="32"/>A_UNDERLINE <g id="33"/>Underline text</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[48]">
+        <source><g id="34"/>A_PROTECT <g id="35"/>“Protected text,” available only on certain</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[49]">
+        <source><g id="36"/>terminals, prevents text from being overwritten.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[50]">
+        <source><g id="37"/>A_HORIZONTAL</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[51]">
+        <source><g id="38"/>A_LEFT</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[52]">
+        <source><x id="39" xid="office:document-content[0]/office:body[0]/office:text[0]/text:p[52]/text:soft-page-break[0]"/><g id="40"/>A_LOW</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[53]">
+        <source><g id="41"/>A_RIGHT</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[54]">
+        <source><g id="42"/>A_TOP</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[55]">
+        <source><g id="43"/>A_VERTICAL <g id="44"/>Not implemented</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[56]">
+        <source><g id="45"/>The attributes listed in Table 3-1 are used with the attrset(), attron(),</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[57]">
+        <source>and attroff() functions to control the appearance of text on the screen.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[58]">
+        <source>attron() and attroff() are used to set and reset individual attributes.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[59]">
+        <source>attrset() is used to override any previous text attributes and set a new</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[60]">
+        <source>attribute for all text.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[61]">
+        <source><g id="46"/>Some attributes are defined by the XSI (X/Open System Interface) but not</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[62]">
+        <source>yet implemented, at least not in any version of NCurses I’ve found. These are:</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[63]">
+        <source>A_HORIZONTAL, A_LEFT, A_LOW, A_RIGHT, A_TOP, and A_VERTICAL.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[64]">
+        <source>(These are “highlighted modes,” and I’m not really certain what that means.)</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[65]">
+        <source>Testing Some Attributes</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[66]">
+        <source>You can use the following program in Listing 3-1 as a base or test bed for test-</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[67]">
+        <source>ing the various attributes listed in Table 3-1.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[68]">
+        <source>Listing 3-1: twinkle.c</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[69]">
+        <source><g id="47"/>1 <g id="48"/>#include &lt;ncurses.h&gt;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[70]">
+        <source><g id="49"/>2</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[71]">
+        <source><g id="50"/>3 <g id="51"/>int main(void)</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[72]">
+        <source><g id="52"/>4 <g id="53"/>{</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[73]">
+        <source><g id="54"/>5 <g id="55"/>initscr();</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[74]">
+        <source><g id="56"/>6</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[75]">
+        <source><g id="57"/>7 <g id="58"/>attron(A_BOLD);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[76]">
+        <source><g id="59"/>8 <g id="60"/>addstr(“Twinkle, twinkle little star\n”);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[77]">
+        <source><g id="61"/>9 <g id="62"/>attron(A_BLINK);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[78]">
+        <source><g id="63"/>10 <g id="64"/>addstr(“How I wonder what you are.\n”);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[79]">
+        <source><g id="65"/>11 <g id="66"/>attroff(A_BOLD);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[80]">
+        <source><g id="67"/>12 <g id="68"/>addstr(“Up above the world so high,\n”);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[81]">
+        <source><g id="69"/>13 <g id="70"/>addstr(“Like a diamond in the sky.\n”);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[82]">
+        <source><g id="71"/>14 <g id="72"/>attrset(A_NORMAL);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[83]">
+        <source><g id="73"/>15 <g id="74"/>addstr(“Twinkle, twinkle little star\n”);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[84]">
+        <source><g id="75"/>16 <g id="76"/>addstr(“How I wonder what you are.\n”);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[85]">
+        <source><g id="77"/>17 <g id="78"/>refresh();</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[86]">
+        <source><g id="79"/>18 <g id="80"/>getch();</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[87]">
+        <source><g id="81"/>19 <g id="82"/>endwin();</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[88]">
+        <source><g id="83"/>20 <g id="84"/>return 0;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[89]">
+        <source><g id="85"/>21 <g id="86"/>}</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[90]">
+        <source><g id="87"/>The important thing to remember about this code is that an attribute stays</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[91]">
+        <source>on until you turn it off, either via attroff() or attrset(). Otherwise, the</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[92]">
+        <source>attributes are slapped on to all text output after the attribute function is used,</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[93]">
+        <source>which can be seen in Figure 3-1.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[94]">
+        <source><g id="88"/>A_BOLD displays the text foreground in bold.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[95]">
+        <source>Blinking Text</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[96]">
+        <source>Figure 3-1: Output of the twinkle.c code</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[97]">
+        <source><g id="89"/>A_BLINK blinks the text on and off. Note that your terminal definition, or</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[98]">
+        <source>GUI terminal preferences panel, may disable this feature. It’s generally</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[99]">
+        <source>accepted that blinking text is perhaps the most irritating attribute you can ever</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[100]">
+        <source>assign to anything on the screen.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[101]">
+        <source><g id="90"/>N OT E Note that text attributes affect only text, not the spaces or “blanks”</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[102]">
+        <source><g id="91"/>between words.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[103]">
+        <source>Multiple-Attribute Mania</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[104]">
+        <source><x id="92" xid="office:document-content[0]/office:body[0]/office:text[0]/text:p[104]/text:soft-page-break[0]"/>You don’t have to issue multiple attrset(), attron(), or attroff()</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[105]">
+        <source>functions to apply or remove multiple attributes. Thanks to the unique bit pat-</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[106]">
+        <source>terns of the attribute constants in NCurses, text attributes can be applied all at</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[107]">
+        <source>once by using a logical OR between each attribute you want in a single</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[108]">
+        <source>attron() or attrset() function.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[109]">
+        <source><g id="93"/>For example, if you want your text bold and blinking, you can use:</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[110]">
+        <source><g id="94"/>attrset(A_BOLD | A_BLINK);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[111]">
+        <source><g id="95"/>Here, both the bold and blink attributes are specified, meaning any text dis-</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[112]">
+        <source>played after that statement will boldly blink (highly irritating). See Listing 3-2</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[113]">
+        <source>as an example.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[114]">
+        <source>Listing 3-2: annoy.c</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[115]">
+        <source><g id="96"/>1 <g id="97"/>#include &lt;ncurses.h&gt;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[116]">
+        <source><g id="98"/>2</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[117]">
+        <source><g id="99"/>3 <g id="100"/>#define COUNT 5</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[118]">
+        <source><g id="101"/>4</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[119]">
+        <source><g id="102"/>5 <g id="103"/>int main(void)</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[120]">
+        <source>Listing 3-2 (continued)</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[121]">
+        <source><g id="104"/>6 <g id="105"/>{</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[122]">
+        <source><g id="106"/>7 <g id="107"/>char text[COUNT][10] = { “Do”, “you”, “find”, “this”, “silly?” };</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[123]">
+        <source><g id="108"/>8 <g id="109"/>int a,b;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[124]">
+        <source><g id="110"/>9</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[125]">
+        <source><g id="111"/>10 <g id="112"/>initscr();</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[126]">
+        <source><g id="113"/>11</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[127]">
+        <source><g id="114"/>12 <g id="115"/>for(a=0;a&lt;COUNT;a++)</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[128]">
+        <source><g id="116"/>13 <g id="117"/>{</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[129]">
+        <source><g id="118"/>14 <g id="119"/>for(b=0;b&lt;COUNT;b++)</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[130]">
+        <source><g id="120"/>15 <g id="121"/>{</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[131]">
+        <source><g id="122"/>16 <g id="123"/>if(b==a) attrset(A_BOLD | A_UNDERLINE);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[132]">
+        <source><g id="124"/>17 <g id="125"/>printw(“%s”,text[b]);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[133]">
+        <source><g id="126"/>18 <g id="127"/>if(b==a) attroff(A_BOLD | A_UNDERLINE);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[134]">
+        <source><g id="128"/>19 <g id="129"/>addch(‘ ‘);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[135]">
+        <source><g id="130"/>20 <g id="131"/>}</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[136]">
+        <source><g id="132"/>21 <g id="133"/>addstr(“\b\n”);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[137]">
+        <source><g id="134"/>22 <g id="135"/>}</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[138]">
+        <source><g id="136"/>23 <g id="137"/>refresh();</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[139]">
+        <source><g id="138"/>24 <g id="139"/>getch();</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[140]">
+        <source><g id="140"/>25</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[141]">
+        <source><g id="141"/>26 <g id="142"/>endwin();</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[142]">
+        <source><g id="143"/>27 <g id="144"/>return 0;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[143]">
+        <source><g id="145"/>28 <g id="146"/>}</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[145]">
+        <source><g id="147"/>Any number of attributes (including color) can be applied in a single</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[146]">
+        <source>attron() or attrset() command and likewise turned off via attroff() or</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[147]">
+        <source>standend(). Simply specify the | (logical OR) between the attribute constants.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[148]">
+        <source>Can It Do Color?</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[149]">
+        <source>Of course, NCurses can do color! The question is whether or not the terminal</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[150]">
+        <source>can. Fortunately, the NCurses library comes with the tools to assist you in</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[151]">
+        <source>determining whether or not the terminal is color blind or rainbow ready.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[152]">
+        <source><g id="148"/>has_colors()</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[153]">
+        <source><g id="149"/>The has_colors() function returns a logical TRUE if the terminal is able to</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[154]">
+        <source>display colored text, FALSE otherwise. (Both TRUE and FALSE are defined in</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[155]">
+        <source>NCURSES.H, so don’t fret over them or redefine them in your code.)</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[156]">
+        <source><x id="150" xid="office:document-content[0]/office:body[0]/office:text[0]/text:p[156]/text:soft-page-break[0]"/><g id="151"/>After determining whether the terminal has colors, you need to start up</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[157]">
+        <source>NCurses color abilities. Here’s the function that does that, aptly named:</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[158]">
+        <source><g id="152"/>start_color()</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[159]">
+        <source><g id="153"/>The start_color() function returns OK if the color functions are properly</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[160]">
+        <source>initialized. (And OK is defined in NCURSES.H.) So after successful completion</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[161]">
+        <source>of the start_color() command, you can use color attributes on text and to</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[162]">
+        <source>shade the background.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[163]">
+        <source><g id="154"/>The following program in Listing 3-3 determines whether your terminal can</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[164]">
+        <source>do colors in NCurses and can start the color routines. If so, the program tells</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[165]">
+        <source>you how many colors and color combinations you can use. (More on that in</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[166]">
+        <source>the next section.)</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[167]">
+        <source>Listing 3-3: colortest.c</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[168]">
+        <source><g id="155"/>1 <g id="156"/>#include &lt;ncurses.h&gt;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[169]">
+        <source><g id="157"/>2 <g id="158"/>#include &lt;stdlib.h&gt;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[170]">
+        <source><g id="159"/>3</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[171]">
+        <source><g id="160"/>4 <g id="161"/>void bomb(char *msg);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[172]">
+        <source><g id="162"/>5</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[173]">
+        <source><g id="163"/>6 <g id="164"/>int main(void)</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[174]">
+        <source><g id="165"/>7 <g id="166"/>{</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[175]">
+        <source><g id="167"/>8 <g id="168"/>initscr();</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[176]">
+        <source><g id="169"/>9</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[177]">
+        <source><g id="170"/>10 <g id="171"/>/* first test for color ability of the terminal */</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[178]">
+        <source><g id="172"/>11 <g id="173"/>if(!has_colors())</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[179]">
+        <source><g id="174"/>12 <g id="175"/>bomb(“Terminal cannot do colors\n”);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[180]">
+        <source><g id="176"/>13</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[181]">
+        <source><g id="177"/>14 <g id="178"/>/* next attempt to initialize curses colors */</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[182]">
+        <source><g id="179"/>15 <g id="180"/>if(start_color() != OK)</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[183]">
+        <source><g id="181"/>16 <g id="182"/>bomb(“Unable to start colors.\n”);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[184]">
+        <source><g id="183"/>17</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[185]">
+        <source><g id="184"/>18 <g id="185"/>/* colors are okay; continue */</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[186]">
+        <source><g id="186"/>19 <g id="187"/>printw(“Colors have been properly initialized.\n”);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[187]">
+        <source><g id="188"/>20 <g id="189"/>printw(“Congratulations!\n”);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[188]">
+        <source><g id="190"/>21 <g id="191"/>printw(“NCurses reports that you can use %d colors,\n”,COLORS);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[189]">
+        <source><g id="192"/>22 <g id="193"/>printw(“and %d color pairs.”,COLOR_PAIRS);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[190]">
+        <source><g id="194"/>23 <g id="195"/>refresh();</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[191]">
+        <source><g id="196"/>24 <g id="197"/>getch();</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[192]">
+        <source><g id="198"/>25</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[193]">
+        <source><g id="199"/>26 <g id="200"/>endwin();</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[194]">
+        <source><g id="201"/>27 <g id="202"/>return 0;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[195]">
+        <source><g id="203"/>28 <g id="204"/>}</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[196]">
+        <source><g id="205"/>29</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[197]">
+        <source><g id="206"/>30 <g id="207"/>void bomb(char *msg)</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[198]">
+        <source><g id="208"/>31 <g id="209"/>{</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[199]">
+        <source><g id="210"/>32 <g id="211"/>endwin();</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[200]">
+        <source><g id="212"/>33 <g id="213"/>puts(msg);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[201]">
+        <source><g id="214"/>34 <g id="215"/>exit(1);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[202]">
+        <source><g id="216"/>35 <g id="217"/>}</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[204]">
+        <source><g id="218"/>Note the use of the COLORS and COLOR_PAIRS. These constants are set</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[205]">
+        <source>when start_color() checks to see how many colors are available to the ter-</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[206]">
+        <source>minal, as well as how much space is left for storing color information in the</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[207]">
+        <source>NCurses attr_t variable type. The next section explains the difference</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[208]">
+        <source><x id="219" xid="office:document-content[0]/office:body[0]/office:text[0]/text:p[208]/text:soft-page-break[0]"/>between COLORS and COLOR_PAIRS.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[209]">
+        <source>Colors and Color Pairs</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[210]">
+        <source>In NCurses, the COLORS and COLOR_PAIRS constants report how many col-</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[211]">
+        <source>ors the terminal can display and how many color combinations (foreground +</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[212]">
+        <source>background — a color pair) can be defined. This may not be the way you’ve</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[213]">
+        <source>dealt with text colors in the past, so pay attention!</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[214]">
+        <source><g id="220"/>The COLORS value reflects the basic set of colors available to the terminal.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[215]">
+        <source>The typical PC reports only eight colors available. These are the standard eight</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[216]">
+        <source>text colors used on PCs since the first IBM PC color graphics adapter set the</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[217]">
+        <source>standard back in 1981. The colors are listed in Table 3-2, along with their</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[218]">
+        <source>NCurses constant names and values.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[219]">
+        <source>Table 3-2: NCurses Colors</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[220]">
+        <source><g id="221"/>NCURSES <g id="222"/>PC BIOS <g id="223"/>NCURSES</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[221]">
+        <source><g id="224"/>NUMBER <g id="225"/>NUMBER <g id="226"/>PC NAME <g id="227"/>NAME</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[222]">
+        <source><g id="228"/>0 <g id="229"/>0 <g id="230"/>Black <g id="231"/>COLOR_BLACK</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[223]">
+        <source><g id="232"/>1 <g id="233"/>4 <g id="234"/>Red <g id="235"/>COLOR_RED</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[224]">
+        <source><g id="236"/>2 <g id="237"/>2 <g id="238"/>Green <g id="239"/>COLOR_GREEN</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[225]">
+        <source><g id="240"/>3 <g id="241"/>6 <g id="242"/>Brown <g id="243"/>COLOR_YELLOW</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[226]">
+        <source><g id="244"/>4 <g id="245"/>1 <g id="246"/>Blue <g id="247"/>COLOR_BLUE</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[227]">
+        <source><g id="248"/>5 <g id="249"/>5 <g id="250"/>Magenta <g id="251"/>COLOR_MAGENTA</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[228]">
+        <source><g id="252"/>6 <g id="253"/>3 <g id="254"/>Cyan <g id="255"/>COLOR_CYAN</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[229]">
+        <source><g id="256"/>7 <g id="257"/>7 <g id="258"/>White <g id="259"/>COLOR_WHITE</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[230]">
+        <source><g id="260"/>It’s important to remember that the COLORS value tells you how many col-</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[231]">
+        <source>ors are available, yet the colors are numbered starting with zero. So the range</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[232]">
+        <source>of colors available is 0 through COLORS minus one.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[233]">
+        <source><g id="261"/>A color pair is simply a combination of foreground and background color</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[234]">
+        <source>attributes. Each combination is a color pair and assigned a number from 1</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[235]">
+        <source>through the value of COLOR_PAIRS minus 1.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[236]">
+        <source><g id="262"/>For example, the color pair COLOR_YELLOW, COLOR_RED indicates yellow</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[237]">
+        <source>text on a red background. To assign those colors as a text attribute, you must</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[238]">
+        <source>first associate them with a color pair number. This is done with the</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[239]">
+        <source>init_pair function:</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[240]">
+        <source><g id="263"/>init_pair(pair,f,b)</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[241]">
+        <source><g id="264"/>The init_pair() function assigns two colors to color pair number pair. f</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[242]">
+        <source>is the foreground, or text, color; b is the background color.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[243]">
+        <source><g id="265"/>init_pair(1,COLOR_YELLOW,COLOR_RED);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[244]">
+        <source><g id="266"/>The preceding statement defines color pair number 1 as yellow text on a red</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[245]">
+        <source>background.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[246]">
+        <source><g id="267"/>The next step is to apply the color attribute to the text. This is done by using</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[247]">
+        <source>the attrset() or attron() function just as you would apply any other text</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[248]">
+        <source>attribute. The key, however, is to use the COLOR_PAIR(n) constant:</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[249]">
+        <source><g id="268"/>attrset(COLOR_PAIR(1));</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[250]">
+        <source><g id="269"/>The preceding statement applies the color attributes assigned to color pair 1</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[251]">
+        <source>to the text that follows. If COLOR_PAIR(1) is defined as yellow text on a red</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[252]">
+        <source>background, that’s the attribute taken by the text.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[253]">
+        <source><g id="270"/>To apply a different color to the text, use init_pair() to set up fore-</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[254]">
+        <source>ground and background colors for a color pair. Then use the COLOR_PAIR(n)</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[255]">
+        <source>constant with attrset() or attron() to apply that color pair combination</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[256]">
+        <source>to your text.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[257]">
+        <source>Eight or Sixteen Colors?</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[258]">
+        <source>While NCurses may report only eight colors available, on most terminals there</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[259]">
+        <source>are twice as many colors to choose from. The secret is to apply the bold text</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[260]">
+        <source><x id="271" xid="office:document-content[0]/office:body[0]/office:text[0]/text:p[260]/text:soft-page-break[0]"/>attribute (A_BOLD) with a color pair.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[261]">
+        <source><g id="272"/>The bold text attribute affects only the foreground text color. It gives you</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[262]">
+        <source>access to the eight brighter versions of the standard eight (or however many)</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[263]">
+        <source>text colors available.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[264]">
+        <source><g id="273"/>For example, if color pair 1 is defined as Magenta on Black, applying bold to</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[265]">
+        <source>the text attribute yields pink on black text:</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[266]">
+        <source><g id="274"/>attrset(COLOR_PAIR(1) | A_BOLD);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[267]">
+        <source><g id="275"/>The other foreground text colors become brighter versions of their original</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[268]">
+        <source>colors when logically OR’d with the A_BOLD attribute. Brown actually</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[269]">
+        <source>becomes yellow, and black becomes a midtone gray.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[270]">
+        <source>Spruce Up Some Text!</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[271]">
+        <source>The color-pair stuff is only confusing when you’re reading about it. The best</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[272]">
+        <source>way to understand the way NCurses applies color is, naturally, with a test pro-</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[273]">
+        <source>gram such as Listing 3-4.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[274]">
+        <source>Listing 3-4: colorme.c</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[275]">
+        <source><g id="276"/>1 <g id="277"/>#include &lt;ncurses.h&gt;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[276]">
+        <source><g id="278"/>2 <g id="279"/>#include &lt;stdlib.h&gt;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[277]">
+        <source><g id="280"/>3</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[278]">
+        <source><g id="281"/>4 <g id="282"/>void bomb(int r);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[279]">
+        <source><g id="283"/>5</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[280]">
+        <source><g id="284"/>6 <g id="285"/>int main(void)</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[281]">
+        <source><g id="286"/>7 <g id="287"/>{</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[282]">
+        <source><g id="288"/>8 <g id="289"/>initscr();</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[283]">
+        <source><g id="290"/>9 <g id="291"/>start_color();</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[284]">
+        <source><g id="292"/>10</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[285]">
+        <source><g id="293"/>11 <g id="294"/>init_pair(1,COLOR_BLACK,COLOR_RED);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[286]">
+        <source><g id="295"/>12 <g id="296"/>init_pair(2,COLOR_BLUE,COLOR_BLACK);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[287]">
+        <source><g id="297"/>13 <g id="298"/>attrset(COLOR_PAIR(1));</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[288]">
+        <source><g id="299"/>14 <g id="300"/>addstr(“My name is Mr. Black!\n”);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[289]">
+        <source><g id="301"/>15 <g id="302"/>attrset(COLOR_PAIR(2));</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[290]">
+        <source><g id="303"/>16 <g id="304"/>addstr(“My name is Mr. Blue!\n”);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[291]">
+        <source><g id="305"/>17 <g id="306"/>attrset(COLOR_PAIR(1));</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[292]">
+        <source><g id="307"/>18 <g id="308"/>addstr(“How do you do?\n”);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[293]">
+        <source><g id="309"/>19 <g id="310"/>attrset(COLOR_PAIR(2));</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[294]">
+        <source><g id="311"/>20 <g id="312"/>addstr(“How do I do “);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[295]">
+        <source><g id="313"/>21 <g id="314"/>attron(A_BOLD);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[296]">
+        <source><g id="315"/>22 <g id="316"/>addstr(“what”);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[297]">
+        <source><g id="317"/>23 <g id="318"/>attroff(A_BOLD);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[298]">
+        <source><g id="319"/>24 <g id="320"/>addch(‘?’);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[299]">
+        <source><g id="321"/>25 <g id="322"/>refresh();</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[300]">
+        <source><g id="323"/>26 <g id="324"/>getch();</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[301]">
+        <source><g id="325"/>27</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[302]">
+        <source><g id="326"/>28 <g id="327"/>endwin();</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[303]">
+        <source><g id="328"/>29 <g id="329"/>return 0;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[304]">
+        <source><g id="330"/>30 <g id="331"/>}</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[305]">
+        <source><g id="332"/>Note that I’m not using any error-checking with start_color() in line 10.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[306]">
+        <source>In this code, I’m assuming that you know whether or not your terminal can do</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[307]">
+        <source>color. In the code you plan on releasing, it’s wise to check for color and have</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[308]">
+        <source>your programs behave accordingly.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[309]">
+        <source><g id="333"/>This basic program contains a simple back-and-forth conversation between</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[310]">
+        <source>two color pairs, shown in Figure 3-2. Be mindful of the parenthesis in the</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[311]">
+        <source>attrset(COLOR_PAIR(n)) statements.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[312]">
+        <source><x id="334" xid="office:document-content[0]/office:body[0]/office:text[0]/text:p[312]/text:soft-page-break[0]"/><g id="335"/>Notice how the color attributes affect only the text put to the screen. The red</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[313]">
+        <source>background doesn’t “splash” out the rest of the line, and the foreground color,</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[314]">
+        <source>like other text attributes, affects only characters, not the blanks or white space</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[315]">
+        <source>between text.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[316]">
+        <source>A Color Thing Your Terminal Probably Cannot Do</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[317]">
+        <source>NCurses has a treat for you when you’re lucky enough to have a terminal that</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[318]">
+        <source>can define its own text colors. For example, you can define pink text and use it</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[319]">
+        <source>if you like. This is done via the init_color() function. The problem is that</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[320]">
+        <source>this function doesn’t appear to be supported on many terminals. That can be</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[321]">
+        <source>confirmed with another function, can_change_color(), which returns a</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[322]">
+        <source>logical TRUE or FALSE depending on whether the terminal has the color-</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[323]">
+        <source>changing ability:</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[324]">
+        <source><g id="336"/>if(!can_change_color())</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[325]">
+        <source><g id="337"/>bomb(“Unable to do color change.\n”);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[326]">
+        <source><g id="338"/>Now if you can get it to work, the init_color() function comes into play,</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[327]">
+        <source>wherein you can create your own unique text colors. That function looks</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[328]">
+        <source>something like this:</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[329]">
+        <source><g id="339"/>init_color(color,r,g,b);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[330]">
+        <source>Figure 3-2: Sample output for colorme.c code</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[331]">
+        <source><g id="340"/>The values passed to init_color() are all short integers. The first</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[332]">
+        <source>color represents the new color number. It must be in the range of zero to</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[333]">
+        <source>COLOR minus 1. Then come values for the red (r), green (g), and blue (b) argu-</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[334]">
+        <source>ments, each of which ranges from 0 to 1000, representing the intensity of that</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[335]">
+        <source>particular color.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[336]">
+        <source><g id="341"/>So, for example, the following call to init_color() defines (or redefines)</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[337]">
+        <source>color number 2 as a dark gray:</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[338]">
+        <source><g id="342"/>init_color(2,250,250,250);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[339]">
+        <source><g id="343"/>The following source code in Listing 3-5 demonstrates how init_color is</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[340]">
+        <source>used to define the color pink for color code 1.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[341]">
+        <source>Listing 3-5: color_me.c</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[342]">
+        <source><g id="344"/>1 <g id="345"/>#include &lt;ncurses.h&gt;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[343]">
+        <source><g id="346"/>2</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[344]">
+        <source><g id="347"/>3 <g id="348"/>#define NEW_COLOR 1</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[345]">
+        <source><g id="349"/>4 <g id="350"/>#define RED 1000</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[346]">
+        <source><g id="351"/>5 <g id="352"/>#define GREEN 750</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[347]">
+        <source><g id="353"/>6 <g id="354"/>#define BLUE 750</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[348]">
+        <source><g id="355"/>7</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[349]">
+        <source><g id="356"/>8 <g id="357"/>int main(void)</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[350]">
+        <source><g id="358"/>9 <g id="359"/>{</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[351]">
+        <source><g id="360"/>10 <g id="361"/>initscr();</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[352]">
+        <source><g id="362"/>11 <g id="363"/>start_color();</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[353]">
+        <source><g id="364"/>12 <g id="365"/>if(!can_change_color())</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[354]">
+        <source><g id="366"/>13 <g id="367"/>addstr(“This probably won’t work, but anyway:\n”);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[355]">
+        <source><g id="368"/>14</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[356]">
+        <source><g id="369"/>15 <g id="370"/>init_color(NEW_COLOR,RED,GREEN,BLUE);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[357]">
+        <source><g id="371"/>16</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[358]">
+        <source><g id="372"/>17 <g id="373"/>init_pair(1,NEW_COLOR,COLOR_BLACK);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[359]">
+        <source><g id="374"/>18 <g id="375"/>attrset(COLOR_PAIR(1));</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[360]">
+        <source><g id="376"/>19 <g id="377"/>printw(“This is the new color %d.\n”,NEW_COLOR);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[361]">
+        <source><g id="378"/>20 <g id="379"/>refresh();</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[362]">
+        <source><g id="380"/>21 <g id="381"/>getch();</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[363]">
+        <source><g id="382"/>22</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[364]">
+        <source><x id="383" xid="office:document-content[0]/office:body[0]/office:text[0]/text:p[364]/text:soft-page-break[0]"/><g id="384"/>23 <g id="385"/>endwin();</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[365]">
+        <source><g id="386"/>24 <g id="387"/>return 0;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[366]">
+        <source><g id="388"/>25 <g id="389"/>}</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[367]">
+        <source><g id="390"/>The init_color() function is used in line 15 to create the new color</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[368]">
+        <source>“pink” by mixing 1000 points of red with 750 points each of blue and green,</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[369]">
+        <source>which works out to be pink. Then that color is put to use by the init_pair()</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[370]">
+        <source>function, and the printw() function should display its text in the new color.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[371]">
+        <source><g id="391"/>On my terminal, which cannot change text color values, the new color</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[372]">
+        <source>shows up as red, which is the default for color 1 anyway. I would call that a</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[373]">
+        <source>failure.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[374]">
+        <source>Coloring a Window</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[375]">
+        <source>In addition to coloring text, NCurses’ color attributes can be applied to win-</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[376]">
+        <source>dows as well, including the standard screen, the default window you see in</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[377]">
+        <source>NCurses. (The standard screen is the same size as the terminal screen.)</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[378]">
+        <source><g id="392"/>The function to fill the standard screen window with color (or any text</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[379]">
+        <source>attribute) is:</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[380]">
+        <source><g id="393"/>bkgd()</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[381]">
+        <source><g id="394"/>The bkdg() function, as its name suggests, sets the background attributes</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[382]">
+        <source>for the standard screen. Every screen location is filled with the attribute(s)</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[383]">
+        <source>specified, whether they’re plain text attributes or color.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[384]">
+        <source>Screen Background Color</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[385]">
+        <source>To set the background color, you must do three things, two of which you</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[386]">
+        <source>already know:</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[387]">
+        <source><g id="395"/>1. First, activate color. Use the has_color() command if necessary to</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[388]">
+        <source><g id="396"/>determine whether the console can do colors. If so, use</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[389]">
+        <source><g id="397"/>start_color() to put NCurses into rainbow mode.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[390]">
+        <source><g id="398"/>2. Second, use init_pair() to create the color pair(s) you want to use,</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[391]">
+        <source><g id="399"/>setting foreground and background colors.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[392]">
+        <source><g id="400"/>3. Third, use bkgd() to color the entire window.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[393]">
+        <source><g id="401"/>The code shown in Listing 3-6 demonstrates how background color is set.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[394]">
+        <source>Listing 3-6: bgcolor1.c</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[395]">
+        <source><g id="402"/>1 <g id="403"/>#include &lt;ncurses.h&gt;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[396]">
+        <source><g id="404"/>2</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[397]">
+        <source><g id="405"/>3 <g id="406"/>int main(void)</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[398]">
+        <source><g id="407"/>4 <g id="408"/>{</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[399]">
+        <source><g id="409"/>5 <g id="410"/>initscr();</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[400]">
+        <source><g id="411"/>6</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[401]">
+        <source><g id="412"/>7 <g id="413"/>start_color();</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[402]">
+        <source><g id="414"/>8 <g id="415"/>init_pair(1,COLOR_WHITE,COLOR_BLUE);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[403]">
+        <source><g id="416"/>9 <g id="417"/>bkgd(COLOR_PAIR(1));</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[404]">
+        <source><g id="418"/>10 <g id="419"/>refresh();</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[405]">
+        <source><g id="420"/>11 <g id="421"/>getch();</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[406]">
+        <source><g id="422"/>12</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[407]">
+        <source><g id="423"/>13 <g id="424"/>endwin();</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[408]">
+        <source><g id="425"/>14 <g id="426"/>return 0;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[409]">
+        <source><g id="427"/>15 <g id="428"/>}</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[410]">
+        <source><g id="429"/>The result should be a solid blue screen, top to bottom. Any text added at</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[411]">
+        <source>this point appears with the color attribute applied automatically, in this case</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[412]">
+        <source>with white text on a blue background.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[413]">
+        <source><g id="430"/>Press the Enter key to end the program; then modify the code to add some</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[414]">
+        <source>text. For example, insert the following before line 10:</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[415]">
+        <source><g id="431"/>addstr(“So this is what a color screen looks like?\n”);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[416]">
+        <source><x id="432" xid="office:document-content[0]/office:body[0]/office:text[0]/text:p[416]/text:soft-page-break[0]"/><g id="433"/>The text appears on the screen with the same attribute: white text on a blue</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[417]">
+        <source>background.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[418]">
+        <source>More than Solid</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[419]">
+        <source>Now if the solid screen bores you, it’s possible to use the bkgd() function to</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[420]">
+        <source>fill each character space on the screen with a given character. That’s because</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[421]">
+        <source>the argument to the bkgd() function is a chtype character.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[422]">
+        <source><g id="434"/>The NCurses chtype is a special type of variable that includes both an</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[423]">
+        <source>attribute and a character. So, if you like, you can specify a single character as</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[424]">
+        <source>the background attribute for a window.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[425]">
+        <source><g id="435"/>Modify the BGCOLOR1.C source code and change line 9 to read:</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[426]">
+        <source><g id="436"/>bkgd(‘.’);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[427]">
+        <source><g id="437"/>Upon running the program, you’ll see the window’s background filled with</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[428]">
+        <source>dots or periods. They appear between words as well because it’s the dot that</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[429]">
+        <source>defines the window’s background “attribute.”</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[430]">
+        <source><g id="438"/>To combine the dot and the color pair, modify line 9 to read:</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[431]">
+        <source><g id="439"/>bkgd(COLOR_PAIR(1) <g id="440"/>| ‘.’);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[432]">
+        <source><g id="441"/>The | in the code is the logical OR. It takes the value of COLOR_PAIR(1) and</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[433]">
+        <source>logically ORs it with the character code for a period. You can also use the logi-</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[434]">
+        <source>cal OR to apply other attributes or characters for the bkgd() function. (See</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[435]">
+        <source>Appendix C for more information on the chtype variable in NCurses.)</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[436]">
+        <source>Changing Color on the Fly</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[437]">
+        <source>The bkgd() function affects all attributes and unused character places on the</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[438]">
+        <source>screen. Any text you’ve written stays on the screen as text; only the attributes</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[439]">
+        <source>are changed, as Listing 3-7 demonstrates:</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[440]">
+        <source>Listing 3-7: bgcolor2.c</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[441]">
+        <source><g id="442"/>1 <g id="443"/>#include &lt;ncurses.h&gt;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[442]">
+        <source><g id="444"/>2</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[443]">
+        <source><g id="445"/>3 <g id="446"/>int main(void)</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[444]">
+        <source><g id="447"/>4 <g id="448"/>{</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[445]">
+        <source><g id="449"/>5 <g id="450"/>initscr();</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[446]">
+        <source><g id="451"/>6</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[447]">
+        <source><g id="452"/>7 <g id="453"/>start_color();</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[448]">
+        <source><g id="454"/>8 <g id="455"/>init_pair(1,COLOR_WHITE,COLOR_BLUE);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[449]">
+        <source><g id="456"/>9 <g id="457"/>init_pair(2,COLOR_GREEN,COLOR_WHITE);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[450]">
+        <source><g id="458"/>10 <g id="459"/>init_pair(3,COLOR_RED,COLOR_GREEN);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[451]">
+        <source><g id="460"/>11 <g id="461"/>bkgd(COLOR_PAIR(1));</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[452]">
+        <source><g id="462"/>12 <g id="463"/>addstr(“I think that I shall never see\n”);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[453]">
+        <source><g id="464"/>13 <g id="465"/>addstr(“a color screen as pretty as thee.\n”);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[454]">
+        <source><g id="466"/>14 <g id="467"/>addstr(“For seasons may change\n”);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[455]">
+        <source><g id="468"/>15 <g id="469"/>addstr(“and storms may thunder;\n”);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[456]">
+        <source><g id="470"/>16 <g id="471"/>addstr(“But color text shall always wonder.”);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[457]">
+        <source><g id="472"/>17 <g id="473"/>refresh();</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[458]">
+        <source><g id="474"/>18 <g id="475"/>getch();</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[459]">
+        <source><g id="476"/>19</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[460]">
+        <source><g id="477"/>20 <g id="478"/>bkgd(COLOR_PAIR(2));</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[461]">
+        <source><g id="479"/>21 <g id="480"/>refresh();</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[462]">
+        <source><g id="481"/>22 <g id="482"/>getch();</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[463]">
+        <source><g id="483"/>23</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[464]">
+        <source><g id="484"/>24 <g id="485"/>bkgd(COLOR_PAIR(3));</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[465]">
+        <source><g id="486"/>25 <g id="487"/>refresh();</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[466]">
+        <source><g id="488"/>26 <g id="489"/>getch();</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[467]">
+        <source><g id="490"/>27</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[468]">
+        <source><x id="491" xid="office:document-content[0]/office:body[0]/office:text[0]/text:p[468]/text:soft-page-break[0]"/><g id="492"/>28 <g id="493"/>endwin();</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[469]">
+        <source><g id="494"/>29 <g id="495"/>return 0;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[470]">
+        <source><g id="496"/>30 <g id="497"/>}</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[471]">
+        <source><g id="498"/>The program initially displays some text on the screen, blue on a white back-</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[472]">
+        <source>ground. Press the Enter key and the colors change to green on a white back-</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[473]">
+        <source>ground — but the text is unchanged. Press Enter again and the text color</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[474]">
+        <source>changes to red, the background to green. Ugly, but it proves that you can</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[475]">
+        <source>change the screen color without bothering any printed text.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[476]">
+        <source>Noise, Too!</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[477]">
+        <source>NCurses doesn’t have sound routines (at least not yet), but there is an audible</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[478]">
+        <source>way to attract attention to your programs, a way beyond text attributes and</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[479]">
+        <source>colors. Two functions do the job.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[480]">
+        <source><g id="499"/>The beep() function, as you can guess, simply beeps the terminal’s</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[481]">
+        <source>speaker. Or, if you’re from the ancient days, it would ring the bell on the tele-</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[482]">
+        <source>type! Either way, it’s getting the user’s attention.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[483]">
+        <source><g id="500"/>The flash() function is newer than beep, designed to get attention by</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[484]">
+        <source>flashing the screen, supposedly to assist the hearing impaired in recognizing</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[485]">
+        <source>alerts. Sadly, flash() isn’t implemented on every terminal, so it may just</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[486]">
+        <source>beep the speaker on your computer. The one way to find out is to run a test</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[487]">
+        <source>program such as Listing 3-8.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[488]">
+        <source>Listing 3-8: notice.c</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[489]">
+        <source><g id="501"/>1 <g id="502"/>#include &lt;ncurses.h&gt;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[490]">
+        <source><g id="503"/>2</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[491]">
+        <source><g id="504"/>3 <g id="505"/>int main(void)</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[492]">
+        <source><g id="506"/>4 <g id="507"/>{</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[493]">
+        <source><g id="508"/>5 <g id="509"/>initscr();</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[494]">
+        <source><g id="510"/>6</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[495]">
+        <source><g id="511"/>7 <g id="512"/>addstr(“Attention!\n”);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[496]">
+        <source><g id="513"/>8 <g id="514"/>beep();</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[497]">
+        <source><g id="515"/>9 <g id="516"/>refresh();</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[498]">
+        <source><g id="517"/>10 <g id="518"/>getch();</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[499]">
+        <source><g id="519"/>11 <g id="520"/>addstr(“I said, ATTENTION!\n”);</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[500]">
+        <source><g id="521"/>12 <g id="522"/>flash();</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[501]">
+        <source><g id="523"/>13 <g id="524"/>refresh();</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[502]">
+        <source><g id="525"/>14 <g id="526"/>getch();</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[503]">
+        <source><g id="527"/>15 <g id="528"/>endwin();</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[504]">
+        <source><g id="529"/>16 <g id="530"/>return 0;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[505]">
+        <source><g id="531"/>17 <g id="532"/>}</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[507]">
+        <source><g id="533"/>After you see Attention! on the screen, you should hear the beep. Press</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[508]">
+        <source>Enter to see I said, ATTENTION! and look for the flash. On my computer, I</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[509]">
+        <source>just heard another beep. Press Enter again to end the program.</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

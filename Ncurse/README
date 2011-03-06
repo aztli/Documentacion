@@ -1,1 +1,20 @@
-Documentacion y Traduccion de la Libreria Ncurse
+==Documentacion y Traduccion de la Libreria Ncurse==
+
+-Si deseas contribuir a traducir los xliff debes utilizar un 
+programa llamado Virtaal. 
+
+Para instalarlo en Ubuntu ejecuta lo siguente:
+
+<-$ apt-get install virtaal>
+
+Para instalarlo en ArchLinux ejecuta lo siguente:
+
+<-$ pacman -S virtaal>
+
+Para instalarlo en Gentoo ejecuta lo siguiente:
+
+<-$ emerge virtaal>
+
+Si deseas mas informacion ponte en contacto con:
+
+<- lelouchy@gmail.com ->
