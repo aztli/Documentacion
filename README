@@ -1,4 +1,4 @@
-¿ Cómo operan los traductores voluntarios ?
+== ¿Cómo operan los traductores voluntarios? ==
 
 * Realmente el mecanismo es sencillo: hay un registro de
   traductores con los jefes de Traduccion. Todo aquel que se considere
@@ -12,7 +12,7 @@
   descargaras del GIt y, tu solo te comprometes a regresar la
   traducción, subiendola al Git(Logicamente se te dara un pequeño curso
   para manejar git), a mas tardar en una fecha específica asignada por
-  el sistema (esperamos que sean tiempos razonables).
+  el jefe de Traduccion (esperando que sean un tiempo razonable).
 
 * El artículo que elegiste es marcado como "En proceso de
   traducción y disponible en Español el: dd/mmm/aaaa" de manera que solo
@@ -40,7 +40,7 @@
 
 http://github.com/aztli
 
-¿ Que ganan los traductores voluntarios ?:
+¿Que ganan los traductores voluntarios?
 
 * Para empezar, reconocimiento por su arduo trabajo y, también el
   agradecimiento de una númerosa comunidad Linux hispano-parlante de
@@ -53,11 +53,8 @@ http://github.com/aztli
 El proyecto de Documentacion contempla las siguente ramas:
     - Glibc
     - Ncurses
-<<<<<<< HEAD
     - GTK 3.0
-=======
     - GTK con C
->>>>>>> 971c4c6... Reglas para aportar en traduccion
     - Documentacion Kernel
     
 Si deseas unirte al grupo de traduccion solo contacta con:
