@@ -15,6 +15,19 @@ Para instalarlo en Gentoo ejecuta lo siguiente:
 
 <-$ emerge virtaal>
 
+El orden de los capitulos es el siguente:
+
+	<Archivo>			Asignada	Persona
+	ncurses_introduccion.xliff	-------->	Lelouch
+	ncurses_capitulo1.xliff		-------->	lelouch
+	ncurses_capitulo2.xliff		-------->	None
+	ncurses_capitulo3.xliff		-------->	None
+	ncurses_capitulo4.xliff		-------->	None
+	ncurses_capitulo5.xliff		-------->	None
+	...
+
+De momento nos encontramos trabajando en los demas capitulos.
+
 Si deseas mas informacion ponte en contacto con:
 
 <- lelouchy@gmail.com ->

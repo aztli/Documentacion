@@ -1,0 +1,1168 @@
+<?xml version='1.0' encoding='utf-8'?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.1" version="1.1">
+  <file original="ncurses_capitulo5.odt" source-language="en" datatype="plaintext">
+    <body>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[2]">
+        <source>NCurses provides a wealth of text-manipulation functions, which are more&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[3]">
+        <source>than just positioning the cursor. There are functions that can insert and delete&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[4]">
+        <source>characters or lines of text, causing other text on the screen to jump around and&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[5]">
+        <source>make room or to fill in the gaps. This chapter covers those amazing functions.&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[6]">
+        <source>Inserting and Deleting Functions&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[7]">
+        <source>Writing a program that spits up text on the screen is a relatively easy task.&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[8]">
+        <source>What becomes a pain in the rear is when you have to modify the text you splash&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[9]">
+        <source>on the screen. That becomes the “Oh, no! I now have to rethink how all this is&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[10]">
+        <source>going to work” chore.&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[11]">
+        <source>Face it. Some dolt somewhere is always going to change his mind. You must&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[12]">
+        <source>learn to be versatile, to plan ahead. And if that’s not always possible, you can&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[13]">
+        <source>rely on the following functions in NCurses that insert and delete text:&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[15]">
+        <source>insch(ch)&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[16]">
+        <source>insertln()&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[17]">
+        <source>delch()&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[18]">
+        <source>deleteln()&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[20]">
+        <source>The ins sisters are used to insert a single character or a complete line of text.&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[21]">
+        <source>The insch() inserts a character. The insertln() function scrolls in a blank&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[22]">
+        <source>line of text.&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[23]">
+        <source>The del brothers have no arguments. They delete a single character or an&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[24]">
+        <source>entire line of text from the screen.&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[25]">
+        <source>As someone who’s struggled to write his own text editor can attest, these&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[26]">
+        <source>routines are blessings in disguise! And they work in the logical manner you&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[27]">
+        <source>would expect them to — yet another wreath to toss on the monument to&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[28]">
+        <source>NCurses’ designers.&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[30]">
+        <source>Editing Shakespeare&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[31]">
+        <source>The following source code in Listing 5-1 serves as the core for the next several&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[32]">
+        <source>sets of programs.&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[33]">
+        <source>Listing 5-1: hamlet1.c&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[35]">
+        <source>#include &lt;ncurses.h&gt;&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[36]">
+        <source>int main(void)&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[37]">
+        <source>{&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[38]">
+        <source>char Ham1[]=“To be, or not to be: that is the question:\n”;&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[39]">
+        <source>char Ham2[]=“Whether ‘tis nobler in the mind to suffer\n”;&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[40]">
+        <source>char Ham3[]=“The slings and arrows of outrageous fortune,\n”;&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[41]">
+        <source>char Ham4[]=“Or to take arms against a sea of troubles,\n”;&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[42]">
+        <source>char Ham5[]=“And by opposing end them?\n”;&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[43]">
+        <source>initscr();&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[44]">
+        <source>addstr(Ham1);&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[45]">
+        <source>addstr(Ham3);&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[46]">
+        <source>addstr(Ham5);&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[47]">
+        <source>refresh();&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[48]">
+        <source>getch();&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[49]">
+        <source><x id="0" xid="office:document-content[0]/office:body[0]/office:text[0]/text:p[49]/text:soft-page-break[0]"/>endwin();&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[50]">
+        <source>return 0;&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[51]">
+        <source>}&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[53]">
+        <source>The program dutifully prints every other line of the start of Hamlet’s&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[54]">
+        <source>famous soliloquy:&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[56]">
+        <source>To be, or not to be: that is the question:&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[57]">
+        <source>The slings and arrows of outrageous fortune&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[58]">
+        <source>And by opposing end them?&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[60]">
+        <source>Doesn’t quite sound the same, right? Of course, to the ignorant it still&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[61]">
+        <source>“sounds” like Shakespeare — but I’m not here to argue the merits of the bard’s&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[62]">
+        <source>poetry or why people seem so turned off by him.&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[63]">
+        <source>Inserting Some Lines&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[64]">
+        <source>The purpose of this lesson is to rebuild the quote properly. The HAMLET1.C&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[65]">
+        <source>code contains all the text so you don’t have to retype the entire soliloquy. But&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[66]">
+        <source>just pretend the input was coming from the terminal and you needed to insert&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[67]">
+        <source>a new line of text between lines 1 and 2?&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[68]">
+        <source>Remember that on the screen, lines 1 and 2 appear on screen rows 0 and 1.&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[69]">
+        <source>Therefore, you would need to insert a blank line at row 1 and shove in the new&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[70]">
+        <source>text there. Further, you would need to scroll the other lines down so that the&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[71]">
+        <source>new line wouldn’t overwrite the existing line.&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[72]">
+        <source>Fortunately, the insertln() function does all that: It inserts a blank line all&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[73]">
+        <source>the way across the screen and scrolls the rest of the text beneath that line down&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[74]">
+        <source>one notch (see Listing 5-2). At that point, you merely need to add the string of&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[75]">
+        <source>text you need.&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[76]">
+        <source>Listing 5-2: hamlet2.c&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[78]">
+        <source>#include &lt;ncurses.h&gt;&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[79]">
+        <source>int main(void){&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[80]">
+        <source>char Ham1[]=“To be, or not to be: that is the question:\n”;&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[81]">
+        <source>char Ham2[]=“Whether ‘tis nobler in the mind to suffer\n”;&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[82]">
+        <source>char Ham3[]=“The slings and arrows of outrageous fortune,\n”;&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[83]">
+        <source>char Ham4[]=“Or to take arms against a sea of troubles,\n”;&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[84]">
+        <source>char Ham5[]=“And by opposing end them?\n”;&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[85]">
+        <source>initscr();&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[86]">
+        <source>addstr(Ham1);&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[87]">
+        <source>addstr(Ham3);&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[88]">
+        <source>addstr(Ham5);&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[89]">
+        <source>refresh();&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[90]">
+        <source>getch();&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[91]">
+        <source>move(1,0);&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[92]">
+        <source>insertln();&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[93]">
+        <source>addstr(Ham2);&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[94]">
+        <source>refresh();&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[95]">
+        <source>getch();&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[96]">
+        <source>endwin();&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[97]">
+        <source>return 0;&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[98]">
+        <source><x id="1" xid="office:document-content[0]/office:body[0]/office:text[0]/text:p[98]/text:soft-page-break[0]"/>}&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[99]">
+        <source>/* wait for key press */&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[100]">
+        <source>/* position cursor */&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[101]">
+        <source>/* insert a blank line, scroll text down */&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[102]">
+        <source>/* line to insert */&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[103]">
+        <source>/* wait for key press */&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[105]">
+        <source>Lines 18 through 22 are the new ones, as shown in the listing, inserting the&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[106]">
+        <source>proper second line of the speech. When the program runs, after the first three&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[107]">
+        <source>lines are displayed, press Enter. That way, getch() has something to eat, and&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[108]">
+        <source>then the rest of the program works.&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[109]">
+        <source>The new code starts by moving the logical cursor to row 1 (the second row)&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[110]">
+        <source>column 0 (first column).&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[111]">
+        <source>Next, the insertln() function creates a blank line on the same line where&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[112]">
+        <source>the logical cursor is placed. It always blanks the entire line, even if the cursor&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[113]">
+        <source>is placed on the far left side of the screen.&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[114]">
+        <source>Finally, the addstr() function inserts a new string of text at the cursor’s&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[115]">
+        <source>position, which is still 1,0. The insertln() function does not move the cur-&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[116]">
+        <source>sor; it uses the cursor’s row position as a guide for which line to blank.&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[117]">
+        <source>The result is that the existing text is scrolled down and the new line is inserted.&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[118]">
+        <source>(Note that insertln() scrolls the entire contents of the standard screen win-&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[119]">
+        <source>dow. If there is text on the last line, that line is scrolled off into oblivion.)&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[120]">
+        <source>Final Changes to Hamlet&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[121]">
+        <source>The problem with HAMLET2.C is that it’s still missing one line of text. There&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[122]">
+        <source>are multiple ways to add that last line of text and finish the program, any one&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[123]">
+        <source>of which is acceptable as long as the results on the screen look like this:&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[124]">
+        <source>To be, or not to be: that is the question:&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[125]">
+        <source>Whether ‘tis nobler in the mind to suffer&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[126]">
+        <source>The slings and arrows of outrageous fortune,&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[127]">
+        <source>Or to take arms against a sea of troubles,&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[128]">
+        <source>And by opposing end them?&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[129]">
+        <source>Try your own solution before looking at mine in Listing 5-3.&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[130]">
+        <source>N OT E The most common mistake is forgetting that the first insertln scrolls&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[131]">
+        <source>down the rest of the text; you must move the cursor to row 3, not row 2, to&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[132]">
+        <source>insert the fourth line.&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[133]">
+        <source>Listing 5-3: hamlet3.c&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[135]">
+        <source>#include &lt;ncurses.h&gt;&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[136]">
+        <source>int main(void)&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[137]">
+        <source>{&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[138]">
+        <source>char Ham1[]=“To be, or not to be: that is the question:\n”;&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[139]">
+        <source>char Ham2[]=“Whether ‘tis nobler in the mind to suffer\n”;&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[140]">
+        <source>char Ham3[]=“The slings and arrows of outrageous fortune,\n”;&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[141]">
+        <source>char Ham4[]=“Or to take arms against a sea of troubles,\n”;&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[142]">
+        <source>char Ham5[]=“And by opposing end them?\n”;&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[143]">
+        <source>char Ham5[] = “And by opposing end them?\n”;&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[144]">
+        <source>initscr();&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[145]">
+        <source>addstr(Ham1);&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[146]">
+        <source>addstr(Ham3);&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[147]">
+        <source><x id="2" xid="office:document-content[0]/office:body[0]/office:text[0]/text:p[147]/text:soft-page-break[0]"/>addstr(Ham5);&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[148]">
+        <source>refresh();&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[149]">
+        <source>getch();&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[150]">
+        <source>move(1,0);&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[151]">
+        <source>insertln();&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[152]">
+        <source>addstr(Ham2);&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[153]">
+        <source>refresh();&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[154]">
+        <source>getch();&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[155]">
+        <source>move(3,0);&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[156]">
+        <source>insertln();&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[157]">
+        <source>addstr(Ham4);&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[158]">
+        <source>refresh();&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[159]">
+        <source>getch();&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[160]">
+        <source>/* position cursor */&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[161]">
+        <source>/* insert blank line, scroll text down */&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[162]">
+        <source>/* line to insert */&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[163]">
+        <source>/* insert blank line at line 4 */&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[164]">
+        <source>/* add line 4 */&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[165]">
+        <source>endwin();&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[166]">
+        <source>return 0;&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[167]">
+        <source>}&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[168]">
+        <source>Inserting One Character at a Time&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[169]">
+        <source>The insch() function inserts only one character into a row of text, shoving all&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[170]">
+        <source>the characters to the left one space to the left. And like insertln(), any char-&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[171]">
+        <source>acter that gets shoved off the left side of the screen is forgotten; no “wrapping”&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[172]">
+        <source>takes place with insch().&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[173]">
+        <source>The following source code in Listing 5-4 is one of those classic chestnuts, the&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[174]">
+        <source>scrolling marquee. Of course, it’s a lot easier to write, thanks to the insch()&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[175]">
+        <source>function.&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[176]">
+        <source>Listing 5-4: marquee1.c&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[178]">
+        <source>#include &lt;ncurses.h&gt;&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[179]">
+        <source>#include &lt;string.h&gt;&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[180]">
+        <source>int main(void)&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[181]">
+        <source>{&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[182]">
+        <source>char text[] = “Stock Market Swells! DOW tops 15,000!”;&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[183]">
+        <source>char *t;&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[184]">
+        <source>int len;&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[185]">
+        <source>initscr();&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[186]">
+        <source>len = strlen(text);&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[187]">
+        <source>t = text;&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[188]">
+        <source>/* initialize pointer */&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[189]">
+        <source>while(len)&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[190]">
+        <source>{&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[191]">
+        <source>move(5,5);&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[192]">
+        <source>/* always insert at the same spot */&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[193]">
+        <source>insch(*(t+len-1));&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[194]">
+        <source>/* work through string backwards */&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[195]">
+        <source>refresh();&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[196]">
+        <source><x id="3" xid="office:document-content[0]/office:body[0]/office:text[0]/text:p[196]/text:soft-page-break[0]"/>napms(100);&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[197]">
+        <source>/* .1 sec. delay */&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[198]">
+        <source>len--;&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[199]">
+        <source>}&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[200]">
+        <source>getch();&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[201]">
+        <source>endwin();&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[202]">
+        <source>return 0;&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[203]">
+        <source>}&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[204]">
+        <source>Each character in the string is processed backward in the while loop (lines&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[205]">
+        <source>14-21), from the end to the beginning. The *(t+len-1) calculation initially&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[206]">
+        <source>points to the last character in the string, based on its length len (with the t&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[207]">
+        <source>pointer always pointing at the start of the string).&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[208]">
+        <source>As the while loop decrements the value of len, the *(t+len-1) calcula-&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[209]">
+        <source>tion points to each previous character in the string. The insch() function&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[210]">
+        <source>then displays that character at location 5,5, pushing the rest of the text on that&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[211]">
+        <source>line one notch to the left. The result is the scrolling marquee.&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[212]">
+        <source>A More Visual Example&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[213]">
+        <source>The following code in Listing 5-5 modifies the original MARQUEE1.C source&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[214]">
+        <source>code, filling the screen with text so that you can more graphically see how the&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[215]">
+        <source>insch() function affects text on the screen.&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[216]">
+        <source>Listing 5-5: marquee2.c&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[218]">
+        <source>#include &lt;ncurses.h&gt;&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[219]">
+        <source>#include &lt;string.h&gt;&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[220]">
+        <source>void fill(void);&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[221]">
+        <source>int main(void)&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[222]">
+        <source>{&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[223]">
+        <source>char text[] = “Stock Market Swells! DOW tops 15,000!”;&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[224]">
+        <source>char *t;&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[225]">
+        <source>int len;&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[226]">
+        <source>initscr();&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[227]">
+        <source>fill();&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[228]">
+        <source>refresh();&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[229]">
+        <source>len = strlen(text);&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[230]">
+        <source>t = text;&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[231]">
+        <source>/* initialize pointer */&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[232]">
+        <source>while(len){&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[233]">
+        <source>move(5,5);&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[234]">
+        <source>/* always insert at the same spot */&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[235]">
+        <source>insch(*(t+len-1));&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[236]">
+        <source>/* work through string backwards */&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[237]">
+        <source>refresh();&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[238]">
+        <source>napms(100);&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[239]">
+        <source>/* .1 sec. delay */&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[240]">
+        <source>len--;&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[241]">
+        <source>}&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[242]">
+        <source>getch();&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[243]">
+        <source>endwin();&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[244]">
+        <source>return 0;&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[245]">
+        <source><x id="4" xid="office:document-content[0]/office:body[0]/office:text[0]/text:p[245]/text:soft-page-break[0]"/>}&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[246]">
+        <source>void fill(void){&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[247]">
+        <source>int a,x,y;&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[248]">
+        <source>getmaxyx(stdscr,y,x);&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[249]">
+        <source>for(a=0; a&lt;y; a++)&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[250]">
+        <source>addstr(“A B C D E F G H I J K L M N O P Q R S T U V W X Y Z\n”);&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[251]">
+        <source>}&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[253]">
+        <source>Less of Hamlet&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[254]">
+        <source>On the deleting side, NCurses offers the delch() and deleteln() func-&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[255]">
+        <source>tions. My favorite is delch() because I can pronounce it. Even so, the follow-&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[256]">
+        <source>ing source code in Listing 5-6 shows deleteln() first. It’s a modification of&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[257]">
+        <source>the original HAMLET.C source code, which makes typing easier.&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[258]">
+        <source>Listing 5-6: hamlet4.c&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[260]">
+        <source>#include &lt;ncurses.h&gt;&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[261]">
+        <source>int main(void)&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[262]">
+        <source>{&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[263]">
+        <source>char Ham1[]=“To be, or not to be: that is the question:\n”;&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[264]">
+        <source>char Ham2[]=“Whether ‘tis nobler in the mind to suffer\n”;&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[265]">
+        <source>char Ham3[]=“The slings and arrows of outrageous fortune,\n”;&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[266]">
+        <source>char Ham4[]=“Or to take arms against a sea of troubles,\n”;&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[267]">
+        <source>char Ham5[]=“And by opposing end them?\n”;&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[268]">
+        <source>char Ham5[] = “And by opposing end them?\n”;&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[269]">
+        <source>initscr();&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[270]">
+        <source>addstr(Ham1);&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[271]">
+        <source>addstr(Ham2);&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[272]">
+        <source>addstr(Ham3);&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[273]">
+        <source>addstr(Ham4);&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[274]">
+        <source>addstr(Ham5);&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[275]">
+        <source>refresh();&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[276]">
+        <source>getch();&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[277]">
+        <source>move(1,0);&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[278]">
+        <source>deleteln();&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[279]">
+        <source>refresh();&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[280]">
+        <source>getch();&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[281]">
+        <source>/* wait for key press */&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[282]">
+        <source>/* move to the line to delete */&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[283]">
+        <source>/* Delete and backscroll */&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[284]">
+        <source>/* wait for key press */&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[285]">
+        <source>endwin();&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[286]">
+        <source>return 0;&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[287]">
+        <source>}&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[289]">
+        <source>First, the whole chunk of text is displayed. Good.&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[290]">
+        <source>Press Enter to delete the text. Note how it scrolls up? Yes, the deleteln()&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[291]">
+        <source>function is nearly the opposite of the insertln() function, complete with&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[292]">
+        <source>logical reverse scrolling. And the vanished line goes off into bit-hell as well;&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[293]">
+        <source>don’t look for it anywhere.&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[294]">
+        <source><x id="5" xid="office:document-content[0]/office:body[0]/office:text[0]/text:p[294]/text:soft-page-break[0]"/>Do note that deleteln() does not affect the location of the cursor. After&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[295]">
+        <source>the last refresh() command above, the cursor is still at location 1,0, eagerly&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[296]">
+        <source>awaiting more text to be added to the screen.&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[297]">
+        <source>Goodbye, Chunk of Text!&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[298]">
+        <source>It’s time to edit Hamlet’s speech. Your job is to display the text, then press a&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[299]">
+        <source>key to delete the word “outrageous.”&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[300]">
+        <source>The command to use is delch(), which has no arguments. It simply&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[301]">
+        <source>removes whichever character happens to be lurking at the current cursor posi-&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[302]">
+        <source>tion. Any characters to the right on the same line are then shuffled over left one&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[303]">
+        <source>notch; a blank character is then added to the end of the line.&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[304]">
+        <source>Hint: “outrageous” is 10 characters long, but you probably also want to&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[305]">
+        <source>delete the space character immediately after it. So 11.&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[306]">
+        <source>Here’s another hint: Row 2, Column 25.&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[307]">
+        <source>You should be able to see the text displayed, press a key, and then watch as&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[308]">
+        <source>the word “outrageous” vanishes. Such tidy editing.&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[310]">
+        <source>#include &lt;ncurses.h&gt;&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[311]">
+        <source>int main(void){&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[312]">
+        <source>char Ham1[]=“To be, or not to be: that is the question:\n”;&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[313]">
+        <source>char Ham2[]=“Whether ‘tis nobler in the mind to suffer\n”;&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[314]">
+        <source>char Ham3[]=“The slings and arrows of outrageous fortune,\n”;&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[315]">
+        <source>char Ham4[]=“Or to take arms against a sea of troubles,\n”;&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[316]">
+        <source>char Ham5[]=“And by opposing end them?\n”;&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[317]">
+        <source>initscr();&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[318]">
+        <source>addstr(Ham1);&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[319]">
+        <source>addstr(Ham2);&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[320]">
+        <source>addstr(Ham3);&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[321]">
+        <source>addstr(Ham4);&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[322]">
+        <source>addstr(Ham5);&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[323]">
+        <source>refresh();&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[324]">
+        <source>getch();&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[325]">
+        <source>move(2,25);&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[326]">
+        <source>for(c=0;c&lt;11;c++)&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[327]">
+        <source>delch();&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[328]">
+        <source>refresh();&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[329]">
+        <source>getch();&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[330]">
+        <source>/* wait for key press */&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[331]">
+        <source>/* move to the start of “outrageous”&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[332]">
+        <source>*/&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[333]">
+        <source>/* gobble! */&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[334]">
+        <source>/* wait for key press */&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[335]">
+        <source>endwin();&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[336]">
+        <source>return 0;&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[337]">
+        <source>}&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[339]">
+        <source>Gobble! Note that delch() does not “backscroll” the screen or “reverse&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[340]">
+        <source>wrap” any text from the following line. You can make such a thing happens,&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[341]">
+        <source>but you will have to write the code that does it.&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[342]">
+        <source>Out It Goes and in It Comes&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[343]">
+        <source><x id="6" xid="office:document-content[0]/office:body[0]/office:text[0]/text:p[343]/text:soft-page-break[0]"/>One more final modification to the Hamlet speech!&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[344]">
+        <source>On your own, modify the source code so that it displays each character of&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[345]">
+        <source>“outrageous” being deleted one at a time. Further, modify the source code&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[346]">
+        <source>so that the word “obnoxious” is inserted in place of “outrageous,” again&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[347]">
+        <source>one character at a time. Hint: Use the napms() function to create a delay&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[348]">
+        <source>between inserting and deleting each character.&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[350]">
+        <source>How did you do? Did you forget to not delete (or reinsert) the space after&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[351]">
+        <source>“outrageous?” Did you use insch() and discover that your new text&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[352]">
+        <source>was inserted backward? Or did you cheat and just use my solution, shown in&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[353]">
+        <source>Listing 5-8: hamlet6.c&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[355]">
+        <source>#include &lt;ncurses.h&gt;&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[356]">
+        <source>int main(void){&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[357]">
+        <source>char Ham1[] = “To be, or not to be: that is the question:\n”;&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[358]">
+        <source>char Ham2[] = “Whether ‘tis nobler in the mind to suffer\n”;&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[359]">
+        <source>char Ham3[] = “The slings and arrows of outrageous fortune,\n”;&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[360]">
+        <source>char Ham4[] = “Or to take arms against a sea of troubles,\n”;&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[361]">
+        <source>char Ham5[] = “And by opposing end them?\n”;&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[362]">
+        <source>char *ob = “obnoxious”;&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[363]">
+        <source>int c;&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[364]">
+        <source>initscr();&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[365]">
+        <source>addstr(Ham1);&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[366]">
+        <source>addstr(Ham2);&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[367]">
+        <source>addstr(Ham3);&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[368]">
+        <source>addstr(Ham4);&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[369]">
+        <source>addstr(Ham5);&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[370]">
+        <source>refresh();&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[371]">
+        <source>getch();&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[372]">
+        <source>/* wait for key press */&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[373]">
+        <source>/* First, remove “outrageous” */&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[374]">
+        <source>move(2,25);&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[375]">
+        <source>for(c=0;c&lt;10;c++)&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[376]">
+        <source>{&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[377]">
+        <source>delch();&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[378]">
+        <source>refresh();&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[379]">
+        <source>napms(100);&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[380]">
+        <source>/* move to the start of “outrageous” */&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[381]">
+        <source>/* only loop 2 times */&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[382]">
+        <source>/* gobble! */&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[383]">
+        <source>/* update screen (cursor doesn’t move)&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[384]">
+        <source>/* pause */&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[385]">
+        <source>}&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[386]">
+        <source>/* Second, insert “obnoxious” */&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[387]">
+        <source>move(2,25);&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[388]">
+        <source>/* reset cursor */&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[389]">
+        <source>for(c=0;c&lt;9;c++)&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[390]">
+        <source>{&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[391]">
+        <source>insch( *(ob+8-c) );&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[392]">
+        <source><x id="7" xid="office:document-content[0]/office:body[0]/office:text[0]/text:p[392]/text:soft-page-break[0]"/>refresh();&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[393]">
+        <source>napms(100);&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[394]">
+        <source>}&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[395]">
+        <source>getch();&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[396]">
+        <source>endwin();&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[397]">
+        <source>return 0;&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[398]">
+        <source>}&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[400]">
+        <source>In this source code, I decided to use a little pointer math to display the&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[401]">
+        <source>“obnoxious” string:&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[402]">
+        <source>insch(*(ob+8-c));&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[403]">
+        <source>Pointer ob is positioned to point at the “s” in obnoxious. That’s eight char-&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[404]">
+        <source>acters into the string minus the value of c, which is zero at the start of the for&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[405]">
+        <source>loop. As the for loop progress, the value of c increases, which backsteps one&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[406]">
+        <source>character at a time through the string.&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[407]">
+        <source>Remember that insch() inserts text backward because it doesn’t move the&#13;</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" id="office:document-content[0]/office:body[0]/office:text[0]/text:p[408]">
+        <source>cursor. So you have to slide “obnoxious” in back to front.</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
