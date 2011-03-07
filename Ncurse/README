@@ -1,4 +1,5 @@
-==Documentacion y Traduccion de la Libreria Ncurse==
+Documentacion y Traduccion de la Libreria Ncurse
+---------------------------------------------------
 
 -Si deseas contribuir a traducir los xliff debes utilizar un 
 programa llamado Virtaal. 
@@ -16,6 +17,7 @@ Para instalarlo en Gentoo ejecuta lo siguiente:
 <-$ emerge virtaal>
 
 El orden de los capitulos es el siguente:
+------------------------------------------------------------------
 
 	<Archivo>			Asignada	Persona
 	ncurses_introduccion.xliff	-------->	Lelouch
@@ -25,6 +27,7 @@ El orden de los capitulos es el siguente:
 	ncurses_capitulo4.xliff		-------->	None
 	ncurses_capitulo5.xliff		-------->	None
 	...
+------------------------------------------------------------------
 
 De momento nos encontramos trabajando en los demas capitulos.
 
